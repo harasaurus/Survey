@@ -13,7 +13,7 @@
     android:orientation="vertical">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp">
+        android:layout_height="250dp">
         <ImageButton
             android:id="@+id/featured"
             android:src="@drawable/ftd"
@@ -36,7 +36,7 @@
         android:layout_height="200dp"
         android:orientation="vertical">
         <LinearLayout
-            android:layout_height="0dp"
+            android:layout_height="100dp"
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:orientation="horizontal">
@@ -62,7 +62,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_height="300dp"
+            android:layout_height="100dp"
             android:layout_width="match_parent"
             android:orientation="horizontal">
             <ImageButton

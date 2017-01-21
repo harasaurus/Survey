@@ -17,29 +17,32 @@
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:src="@drawable/ft"/>
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <Button
+            android:id="@+id/login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/activity_vertical_margin"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
             android:text="LOGIN"/>
         <Button
+            android:id="@+id/signup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/activity_vertical_margin"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
             android:text="Signup"/>
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </LinearLayout>
