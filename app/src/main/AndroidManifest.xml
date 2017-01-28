@@ -23,8 +23,12 @@
         <activity
             android:name=".HomeActivity"
             android:label="Homepage" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".SignupActivity"></activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="Login"    />
+        <activity
+            android:name=".SignupActivity"
+            android:label="Sign-Up"></activity>
     </application>
 
 </manifest>
