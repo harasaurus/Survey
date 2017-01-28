@@ -56,7 +56,7 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     private boolean nameIsAcceptable(String name){
-        ////TODO check if name follows standards i.e- only characters and space is allowed
+        ////TODO check if name follows standards i.e- only alphabaets and space is allowed
     if(true)
     {return true;}
     else
@@ -103,7 +103,7 @@ public class SignupActivity extends AppCompatActivity {
 
     private boolean passwordIsAcceptable(String pass){
     ////TODO check if password follows the standards i.e.-1 smallcase char,1 caps,1 number, 1 special character
-        if(true)
+        if(haveSmallAlpha(pass)&&haveCaps(pass)&&haveNumber(pass)&&haveSpclChar(pass))
     {return true;}
     else
     {showWarning(R.id.repasswordWarning,R.string.passwordNotMatching);
@@ -158,6 +158,39 @@ public class SignupActivity extends AppCompatActivity {
         return Item;
     }
 
+    private boolean haveSmallAlpha(String password){
+        if(password.matches(".* + [a-z] + .*")){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    private boolean haveCaps(String password){
+        if(password.matches(".* + [A-Z] + .*")){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    private boolean haveSpclChar(String password){
+    if(password.matches(".* + [!@#$%^&*] + .*")){
+        return true;
+    }else{
+        return false;
+    }
+    }
+
+    private boolean haveNumber(String password){
+        if(password.matches(".* + [0-9] + .*")){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
 }
 
