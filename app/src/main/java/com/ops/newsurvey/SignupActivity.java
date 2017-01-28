@@ -26,6 +26,7 @@ public class SignupActivity extends AppCompatActivity {
             String username = getItem(R.id.username);
             String pass1 = getItem(R.id.password);
             String pass2 = getItem(R.id.repassword);
+
             if(authenticated(name, email, DOB, username, pass1, pass2)){
                 register();
             }
@@ -156,6 +157,7 @@ public class SignupActivity extends AppCompatActivity {
         String Item = editText.getText().toString();
         return Item;
     }
+
 
 }
 
