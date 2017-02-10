@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:text="Username"
         android:layout_marginBottom="16dp"/>
-
+    <!-- This is where user inputs username -->
     <EditText
         android:inputType="textPersonName"
         android:id="@+id/loginusername"
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:text="Password"
         android:layout_marginBottom="16dp"/>
-
+    <!-- This is where user inputs password -->
     <EditText
         android:id="@+id/loginpassword"
         android:inputType="textPassword"
@@ -39,9 +39,37 @@
         android:hint="password"
         android:layout_marginBottom="16dp"/>
 
+    <!-- This is where warnings are  displayed -->
+    <TextView
+        android:id="@+id/loginWarning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:textColor="#ff0000"/>
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Login"
         android:onClick="login"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Don't have an account?"
+        android:textAlignment="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Sign up"
+        android:textColor="#0000ff"
+        android:onClick="goToSign"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Forgotten username or password?"
+        android:textColor="#0000ff" />
+
 </LinearLayout>

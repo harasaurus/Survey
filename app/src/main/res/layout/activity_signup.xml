@@ -29,9 +29,7 @@
         android:id="@+id/nameWarning"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:textColor="#ff0000"/>
-
+        android:textColor="#ff0000" />
 
     <TextView
         android:layout_width="match_parent"
@@ -47,7 +45,6 @@
         android:id="@+id/DOBWarning"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         android:textColor="#ff0000"/>
 
 
@@ -64,7 +61,6 @@
         android:id="@+id/usernameWarning"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         android:textColor="#ff0000"/>
 
 
@@ -82,7 +78,6 @@
         android:id="@+id/emailWarning"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         android:textColor="#ff0000"/>
 
 
@@ -100,7 +95,6 @@
         android:id="@+id/passwordWarning"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         android:textColor="#ff0000"/>
 
 
@@ -118,7 +112,6 @@
         android:id="@+id/repasswordWarning"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         android:textColor="#ff0000"/>
 
 

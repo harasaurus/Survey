@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SignupActivity extends AppCompatActivity {
 
@@ -17,7 +18,7 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     public void signup(View view){
-        removeWarnings();
+        //removeWarnings();
         CheckBox terms = (CheckBox) findViewById(R.id.terms);
         if(terms.isChecked()) {
             String name = getItem(R.id.name);
@@ -106,29 +107,30 @@ public class SignupActivity extends AppCompatActivity {
         if(haveSmallAlpha(pass)&&haveCaps(pass)&&haveNumber(pass)&&haveSpclChar(pass))
     {return true;}
     else
-    {showWarning(R.id.repasswordWarning,R.string.passwordNotMatching);
+    {showWarning(R.id.repasswordWarning,R.string.passwordNotAcceptable);
     showWarning(R.id.passwordWarning,R.string.passwordNotAcceptable);
-    return false;}
+    return true;
+        //return false;
+        }
     }
 
-    private void removeWarnings(){
+    /*private void removeWarnings(){
         removeWarning(R.id.nameWarning);
         removeWarning(R.id.emailWarning);
         removeWarning(R.id.usernameWarning);
         removeWarning(R.id.passwordWarning);
         removeWarning(R.id.repasswordWarning);
-    }
+    }*/
 
     private void removeWarning(int id){
         TextView textView = (TextView) findViewById(id);
-        textView.setVisibility(TextView.GONE);
+        textView.setText("");
     }
 
     private void showWarning(int id,int warning){
         TextView textView = (TextView) findViewById(id);
-        textView.setVisibility(TextView.VISIBLE);
         String warn = getString(warning);
-        textView.setText(warning);
+        textView.setText(warn);
     }
 
     private void emptyFieldHandler(){
@@ -144,7 +146,8 @@ public class SignupActivity extends AppCompatActivity {
         EditText editText = (EditText) findViewById(id);
         String field = editText.getText().toString();
         if(field.isEmpty())
-        {showWarning(id,R.string.fieldIsEmpty);}
+        {
+            showWarning(id,R.string.fieldIsEmpty);}
     }
     private void register(){
         ////TODO register user in DB
@@ -191,6 +194,5 @@ public class SignupActivity extends AppCompatActivity {
             return false;
         }
     }
-
 }
 

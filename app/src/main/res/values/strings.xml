@@ -8,4 +8,5 @@
     <string name="passwordNotMatching">password not matching</string>
     <string name="passwordNotAcceptable">Choose a proper password</string>
     <string name="fieldIsEmpty">Field is Empty</string>
+    <string name="loginError">Wrong username or password</string>
 </resources>
