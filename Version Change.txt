@@ -1,0 +1,8 @@
+V0.1 Commit:S1
+    -Labels removed from android manifest
+    -created PoliticsActivity Activity
+    -updated Question class
+    -updated login UI
+    -created layout for listing questions i.e.-list_item_cat.xml
+    -updated colors
+    -removed ActionBars
