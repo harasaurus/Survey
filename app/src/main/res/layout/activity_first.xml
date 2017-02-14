@@ -12,7 +12,9 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="370dp"
-        android:src="@drawable/ft" />
+        android:src="@drawable/ft"
+        android:id="@+id/imageView" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

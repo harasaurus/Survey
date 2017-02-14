@@ -1,45 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.ops.newsurvey.LoginActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:backgroundTint="@color/background">
 
-    <TextView
-        android:layout_width="match_parent"
+    <ImageView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Username"
-        android:layout_marginBottom="16dp"/>
-    <!-- This is where user inputs username -->
+        app:srcCompat="@drawable/logo"
+        android:layout_marginTop="75dp"
+        android:id="@+id/imageView3"
+        android:layout_below="@+id/loginWarning"
+        android:layout_centerHorizontal="true" />
+
     <EditText
-        android:inputType="textPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
         android:id="@+id/loginusername"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="username"
-        android:layout_marginBottom="16dp"/>
+        android:hint="Type your username"
+        android:textAlignment="center"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorAccent"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Password"
-        android:layout_marginBottom="16dp"/>
-    <!-- This is where user inputs password -->
     <EditText
-        android:id="@+id/loginpassword"
-        android:inputType="textPassword"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="password"
-        android:layout_marginBottom="16dp"/>
+        android:inputType="textPassword"
+        android:ems="10"
+        android:layout_marginTop="10dp"
+        android:id="@+id/loginpassword"
+        android:hint="Type your password"
+        android:layout_below="@+id/loginusername"
+        android:layout_alignStart="@+id/loginusername"
+        android:textColor="@color/colorAccent"/>
 
-    <!-- This is where warnings are  displayed -->
+    <Button
+        android:text="Login"
+        android:layout_width="370dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/button"
+        android:layout_below="@+id/loginpassword"
+        android:layout_centerHorizontal="true"
+        />
+
+    <!-- warnings -->
     <TextView
         android:id="@+id/loginWarning"
         android:layout_width="match_parent"
@@ -47,29 +60,25 @@
         android:visibility="gone"
         android:textColor="#ff0000"/>
 
-    <Button
-        android:layout_width="match_parent"
+    <TextView
+        android:text="forgot password"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:onClick="login"/>
+        android:layout_below="@+id/button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="7dp"
+        android:id="@+id/textView"
+        android:textColor="@color/colorAccent"/>
 
     <TextView
-        android:layout_width="match_parent"
+        android:text="Don't have an account"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Don't have an account?"
-        android:textAlignment="center"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text="Sign up"
-        android:textColor="#0000ff"
-        android:onClick="goToSign"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text="Forgotten username or password?"
-        android:textColor="#0000ff" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:id="@+id/textView2"
+        android:onClick="goToSign"
+        android:textColor="@color/colorAccent"/>
 
-</LinearLayout>
+</RelativeLayout>
