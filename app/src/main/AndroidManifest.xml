@@ -21,7 +21,12 @@
         <activity
             android:name=".SignupActivity"
             android:label="Sign-Up" />
-        <activity android:name=".PoliticsActivity"></activity>
+        <activity android:name=".PoliticsActivity" />
+        <activity android:name=".SportsActivity" />
+        <activity android:name=".TravelActivity" />
+        <activity android:name=".LifestyleActivity" />
+        <activity android:name=".MiscActivity" />
+        <activity android:name=".PopActivity"></activity>
     </application>
 
 </manifest>

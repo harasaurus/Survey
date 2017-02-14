@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NewSurvey</string>
+    <string name="app_name">Opinio</string>
     <string name="usernameNotUnique">Username Taken</string>
     <string name="nameNotAcceptable">Choose a proper name</string>
     <string name="emailNotUnique">Email taken</string>

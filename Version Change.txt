@@ -6,3 +6,9 @@ V0.1 Commit:S1
     -created layout for listing questions i.e.-list_item_cat.xml
     -updated colors
     -removed ActionBars
+
+    Commit:H2
+    -Added path to different activities for each categories in HomeActivity
+    -Created category activities
+    -Fixed an error for constructors in Question
+    -Created QuestionAdapter

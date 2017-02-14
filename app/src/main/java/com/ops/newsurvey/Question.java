@@ -14,12 +14,21 @@ public class Question {
     private String[] mTags =new String[4];
 
 
-    public void Question(String text, ArrayList<String> Opts)
+    Question(String text, ArrayList<String> Opts)
     {
         mText= text;
         mOpts[0] = Opts.get(0);
         mOpts[1] = Opts.get(1);
         mOpts[2] = Opts.get(2);
+        createQuestion();
+    }
+
+    Question(String text, String Opt0, String Opt1, String Opt2)
+    {
+        mText= text;
+        mOpts[0] = Opt0;
+        mOpts[1] = Opt1;
+        mOpts[2] = Opt2;
         createQuestion();
     }
 
