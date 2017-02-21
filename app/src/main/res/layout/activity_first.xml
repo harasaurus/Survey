@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--THIS IS THE PAGE THAT USER SEES WHEN OPENING THE APP FOR FIRST TIME -->
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_first"
@@ -15,10 +15,7 @@
         android:src="@drawable/ft"
         android:id="@+id/imageView" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+
         <Button
             android:id="@+id/login"
             android:layout_width="wrap_content"
@@ -41,6 +38,6 @@
             android:text="Signup"/>
 
 
-    </RelativeLayout>
 
-</LinearLayout>
+
+</RelativeLayout>
