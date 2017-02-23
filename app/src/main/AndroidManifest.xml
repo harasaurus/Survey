@@ -16,7 +16,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".FirstActivity" />
-        <activity android:name=".HomeActivity" />
+        <activity
+            android:name=".HomeActivity"
+            android:label="Home"
+            android:theme="@style/AppInside" />
         <activity android:name=".LoginActivity" />
         <activity
             android:name=".SignupActivity"
@@ -26,7 +29,7 @@
         <activity android:name=".TravelActivity" />
         <activity android:name=".LifestyleActivity" />
         <activity android:name=".MiscActivity" />
-        <activity android:name=".PopActivity"></activity>
+        <activity android:name=".PopActivity" />
     </application>
 
 </manifest>

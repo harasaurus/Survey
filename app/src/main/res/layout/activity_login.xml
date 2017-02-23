@@ -79,11 +79,11 @@
         android:textColor="#fff"/>
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
         app:srcCompat="@drawable/logo"
         android:id="@+id/imageView3"
-        android:layout_marginBottom="64dp"
+        android:layout_marginBottom="55dp"
         android:layout_above="@+id/loginusername"
         android:layout_centerHorizontal="true" />
 
