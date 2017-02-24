@@ -7,16 +7,7 @@
     android:layout_height="match_parent"
     tools:context="com.ops.newsurvey.LoginActivity"
     android:orientation="vertical"
-    android:backgroundTint="@color/background">
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/logo"
-        android:layout_marginTop="75dp"
-        android:id="@+id/imageView3"
-        android:layout_below="@+id/loginWarning"
-        android:layout_centerHorizontal="true" />
+    >
 
     <EditText
         android:layout_width="wrap_content"
@@ -26,30 +17,25 @@
         android:id="@+id/loginusername"
         android:hint="Type your username"
         android:textAlignment="center"
+        android:fontFamily="sans-serif"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:textColor="@color/colorAccent"/>
+        android:textColor="@color/colorPrimaryDark"/>
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
         android:layout_marginTop="10dp"
-        android:id="@+id/loginpassword"
-        android:hint="Type your password"
         android:layout_below="@+id/loginusername"
         android:layout_alignStart="@+id/loginusername"
-        android:textColor="@color/colorAccent"/>
-
-    <Button
-        android:text="Login"
-        android:layout_width="370dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="10dp"
-        android:id="@+id/button"
-        android:layout_below="@+id/loginpassword"
         android:layout_centerHorizontal="true"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:fontFamily="sans-serif"
+        android:textAlignment="center"
+        android:id="@+id/loginpassword"
+        android:hint="Type your password"
+        android:textColor="@color/colorPrimaryDark"
         />
 
     <!-- warnings -->
@@ -68,17 +54,37 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="7dp"
         android:id="@+id/textView"
-        android:textColor="@color/colorAccent"/>
+        android:textColor="@color/colorPrimaryDark"/>
 
     <TextView
-        android:text="Don't have an account"
+        android:text="Don't have an account? Signup here "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="23dp"
         android:id="@+id/textView2"
         android:onClick="goToSign"
-        android:textColor="@color/colorAccent"/>
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Login"
+        android:layout_width="300dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="14dp"
+        android:id="@+id/button"
+        android:layout_below="@+id/loginpassword"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="#fff"/>
+
+    <ImageView
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        app:srcCompat="@drawable/logo"
+        android:id="@+id/imageView3"
+        android:layout_marginBottom="55dp"
+        android:layout_above="@+id/loginusername"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

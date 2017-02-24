@@ -12,3 +12,8 @@ V0.1 Commit:S1
     -Created category activities
     -Fixed an error for constructors in Question
     -Created QuestionAdapter
+
+    Commit:S2
+    -changed the icons.
+    -perfected layouts
+    -Changed Home Screen
