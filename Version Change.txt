@@ -17,3 +17,8 @@ V0.1 Commit:S1
     -changed the icons.
     -perfected layouts
     -Changed Home Screen
+
+    Commit :S2.1
+    -Changed UI
+    -added question_display.xml
+    -added question_stack.xml @ values
