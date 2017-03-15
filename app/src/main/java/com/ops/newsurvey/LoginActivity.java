@@ -71,11 +71,12 @@ public class LoginActivity extends AppCompatActivity {
         switch(counter){
             case 1: return "PHI";
             case 2: return "RO";
+            case 3: return "SAB";
             default: return "SIGMA";
         }
     }
 
-    private void startSession(int ID){
+    private void startSession(int id){ // id variable here not used..
         ////TODO- make an object of user
         Intent intent = new Intent(this,HomeActivity.class);
         startActivity(intent);

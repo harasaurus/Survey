@@ -22,3 +22,9 @@ V0.1 Commit:S1
     -Changed UI
     -added question_display.xml
     -added question_stack.xml @ values
+
+    Commit S3
+    -Changed UI of Categories
+    -Added first time installation pages
+    -Added PrefManager & WelcomeActivity(temporary, they will be modified )
+    -Added activity_welcome.xml, welcome_slide1.xml - welcome_slide4.xml

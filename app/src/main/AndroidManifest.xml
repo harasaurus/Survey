@@ -3,56 +3,52 @@
     package="com.ops.newsurvey">
 
     <application
-
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
+        android:label="Opinio"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".FirstActivity" />
-
         <activity
             android:name=".HomeActivity"
             android:label="Home"
             android:theme="@style/AppInside" />
-
         <activity android:name=".LoginActivity" />
-
         <activity
             android:name=".SignupActivity"
             android:label="Sign-Up" />
-
-        <activity android:name=".PoliticsActivity"
+        <activity
+            android:name=".PoliticsActivity"
             android:label="Politics"
-            android:theme="@style/AppInside"/>
-
-        <activity android:name=".SportsActivity"
+            android:theme="@style/AppInside" />
+        <activity
+            android:name=".SportsActivity"
             android:label="Sports"
-            android:theme="@style/AppInside"/>
-
-        <activity android:name=".TravelActivity"
+            android:theme="@style/AppInside" />
+        <activity
+            android:name=".TravelActivity"
             android:label="Travel"
-            android:theme="@style/AppInside"/>
-
-        <activity android:name=".LifestyleActivity"
+            android:theme="@style/AppInside" />
+        <activity
+            android:name=".LifestyleActivity"
             android:label="Life Style"
-            android:theme="@style/AppInside"/>
-
-        <activity android:name=".MiscActivity"
+            android:theme="@style/AppInside" />
+        <activity
+            android:name=".MiscActivity"
             android:label="Miscellaneous"
-            android:theme="@style/AppInside"/>
-
-        <activity android:name=".PopActivity"
+            android:theme="@style/AppInside" />
+        <activity
+            android:name=".PopActivity"
             android:label="Pop Culture"
-            android:theme="@style/AppInside"/>
-
+            android:theme="@style/AppInside" />
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

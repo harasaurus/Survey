@@ -12,10 +12,12 @@
     tools:context="com.ops.newsurvey.PoliticsActivity">
     <ImageView
         android:src="@drawable/ftd"
+        android:id="@+id/banner_politics"
         android:layout_width="match_parent"
         android:layout_height="160dp" />
     <ListView
-        android:layout_marginTop="160dp"
+        android:padding="10dp"
+        android:layout_below="@+id/banner_politics"
         android:id="@+id/polList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
