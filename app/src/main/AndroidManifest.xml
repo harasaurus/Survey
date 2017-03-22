@@ -5,10 +5,10 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Opinio"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,12 +24,31 @@
         <activity
             android:name=".SignupActivity"
             android:label="Sign-Up" />
-        <activity android:name=".PoliticsActivity" />
-        <activity android:name=".SportsActivity" />
-        <activity android:name=".TravelActivity" />
-        <activity android:name=".LifestyleActivity" />
-        <activity android:name=".MiscActivity" />
-        <activity android:name=".PopActivity" />
+        <activity
+            android:name=".PoliticsActivity"
+            android:label="Politics"
+            android:theme="@style/AppInside" />
+        <activity
+            android:name=".SportsActivity"
+            android:label="Sports"
+            android:theme="@style/AppInside" />
+        <activity
+            android:name=".TravelActivity"
+            android:label="Travel"
+            android:theme="@style/AppInside" />
+        <activity
+            android:name=".LifestyleActivity"
+            android:label="Life Style"
+            android:theme="@style/AppInside" />
+        <activity
+            android:name=".MiscActivity"
+            android:label="Miscellaneous"
+            android:theme="@style/AppInside" />
+        <activity
+            android:name=".PopActivity"
+            android:label="Pop Culture"
+            android:theme="@style/AppInside" />
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

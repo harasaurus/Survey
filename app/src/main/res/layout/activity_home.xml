@@ -10,24 +10,27 @@ android:layout_height="match_parent"
 android:orientation="vertical"
     android:weightSum="1">
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="250dp">
-
-    <ImageButton
-        android:layout_marginTop="10dp"
-        android:id="@+id/featured"
-        android:src="@drawable/ftd"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-    <ImageButton
-        android:src="@drawable/draw"
-        android:layout_height="48dp"
-        android:layout_width="48dp"
-        android:scaleType="centerCrop"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"/>
-</RelativeLayout>
+        android:layout_height="200dp">
+
+        <ImageButton
+            android:id="@+id/featured"
+            android:src="@drawable/banner1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true" />
+        <ImageButton
+            android:src="@drawable/drawer_white"
+            android:layout_height="48dp"
+            android:layout_width="48dp"
+            android:scaleType="centerCrop"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"/>
+
+
+    </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -35,10 +38,9 @@ android:orientation="vertical"
         android:paddingTop="2dp"
         android:layout_alignParentTop="true">
 
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
             <LinearLayout
                 android:layout_height="130dp"

@@ -16,19 +16,20 @@ public class MainActivity extends AppCompatActivity {
 
     public void nextstep(){
 
-    boolean rookie=first_TF();
-        if(rookie){
+    //boolean rookie=first_TF();
+      //  if(rookie){
             Intent ontent=new Intent(this,FirstActivity.class);
             startActivity(ontent);
+      //  }
+      //  else{
+      //      Intent notent=new Intent(this,LoginActivity.class);
+      //      startActivity(notent);
         }
-        else{
-            Intent notent=new Intent(this,LoginActivity.class);
-            startActivity(notent);
-        }
-    }
+      //}
 
-    public boolean first_TF(){
+      //  public boolean first_TF(){
         //// TODO:Check if user have opened app for first time if yes 'rookie'=true else false
-        return true;
-    }
+      //    return true;
+      //  }
+
 }

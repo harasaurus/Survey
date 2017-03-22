@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pol_ques1">Question1 ?</string>
+    <string name="pol_ques2">Question2 ?</string>
+    <string name="pol_ques3">Question3 ?</string>
+</resources>
