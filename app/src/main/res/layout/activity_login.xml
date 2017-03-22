@@ -41,13 +41,6 @@
         android:textColor="@color/colorPrimaryDark"
         />
 
-    <!-- warnings -->
-    <TextView
-        android:id="@+id/loginWarning"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:textColor="#ff0000"/>
 
     <TextView
         android:text="forgot password"
@@ -79,7 +72,8 @@
         android:layout_below="@+id/loginpassword"
         android:layout_centerHorizontal="true"
         android:background="@color/colorPrimaryDark"
-        android:textColor="#fff"/>
+        android:textColor="#fff"
+        android:onClick="login"/>
 
     <ImageView
         android:layout_width="140dp"

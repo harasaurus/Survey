@@ -3,6 +3,7 @@ package com.ops.newsurvey;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -18,6 +19,28 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        EditText user =(EditText) findViewById(R.id.loginusername);
+        EditText password =(EditText) findViewById(R.id.loginpassword);
+
+        user.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                int id = v.getId();
+                removeWarning(id);
+                return true;
+            }
+        });
+
+        password.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                int id = v.getId();
+                removeWarning(id);
+                return true;
+            }
+        });
+
+
     }
 
     public void login(View view){
@@ -29,9 +52,8 @@ public class LoginActivity extends AppCompatActivity {
         if(authenticate(user,pass))
         {
             startSession(id);
-        }else
-            showWarning(R.id.loginWarning,R.string.loginError);
-    }
+        }
+          }
 
     private boolean authenticate(String user, String pass){
        if(userExist(user)){
@@ -40,7 +62,10 @@ public class LoginActivity extends AppCompatActivity {
                return true;
            }else return false;
         }else
-           return false;
+            showWarning(R.id.loginusername,R.string.loginError);
+            showWarning(R.id.loginpassword,R.string.loginError);
+
+        return false;
     }
 
     private boolean userExist(String user){
@@ -72,7 +97,7 @@ public class LoginActivity extends AppCompatActivity {
             case 1: return "PHI";
             case 2: return "RO";
             case 3: return "SAB";
-            default: return "SIGMA";
+            default: return "NULL";
         }
     }
 
@@ -86,13 +111,18 @@ public class LoginActivity extends AppCompatActivity {
         TextView warningView = (TextView) findViewById(id);
         warningView.setVisibility(View.VISIBLE);
         String warn = getString(warning);
-        warningView.setText(warn);
+        warningView.setError(warn);
     }
 
-    public void goToSign(View view){
+    private void goToSign(View view){
         Intent intent = new Intent(this,SignupActivity.class);
         startActivity(intent);
     }
 
+    private void removeWarning(int id)
+    {
+        TextView view = (TextView) findViewById(id);
+        view.setError(null);
+    }
 
 }

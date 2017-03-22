@@ -31,7 +31,7 @@ public class TravelActivity extends AppCompatActivity {
         questions.add(new Question("Travel Question 10",opt));
 
         QuestionAdapter Adapter=new QuestionAdapter(this,questions);
-        ListView listView=(ListView) findViewById(R.id.polList);
+        ListView listView=(ListView) findViewById(R.id.traList);
         listView.setAdapter(Adapter);
     }
 }
