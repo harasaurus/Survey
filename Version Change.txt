@@ -36,3 +36,6 @@ V0.1 Commit:S1
     -fixed bug in travel activity
     -improved functionality in login activity & signup activity
 
+    Commit S4:
+    -Changed first installation pages
+    -Chaged UI of activity_first
