@@ -38,4 +38,4 @@ V0.1 Commit:S1
 
     Commit S4:
     -Changed first installation pages
-    -Chaged UI of activity_first
+    -Changed UI of activity_first
