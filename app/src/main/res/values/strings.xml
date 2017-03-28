@@ -9,7 +9,7 @@
     <string name="passwordNotAcceptable">Choose a proper password</string>
     <string name="fieldIsEmpty">Field is Empty</string>
     <string name="loginError">Wrong username or password</string>
-    <string name="title_activity_nav">nav</string>
+
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -24,7 +24,7 @@
 
 
 
-    <string name="slide_2_title">Create your Own Survey</string>
+    <string name="slide_2_title">Create your own Survey</string>
     <string name="slide_2_join">and</string>
     <string name="slide_2_desc">Participate to share your views</string>
 

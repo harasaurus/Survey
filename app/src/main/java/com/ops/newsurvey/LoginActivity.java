@@ -22,7 +22,7 @@ public class LoginActivity extends AppCompatActivity {
         EditText user =(EditText) findViewById(R.id.loginusername);
         EditText password =(EditText) findViewById(R.id.loginpassword);
 
-        user.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+       user.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 int id = v.getId();
@@ -39,7 +39,6 @@ public class LoginActivity extends AppCompatActivity {
                 return true;
             }
         });
-
 
     }
 
