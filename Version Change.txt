@@ -28,3 +28,14 @@ V0.1 Commit:S1
     -Added first time installation pages
     -Added PrefManager & WelcomeActivity(temporary, they will be modified )
     -Added activity_welcome.xml, welcome_slide1.xml - welcome_slide4.xml
+
+    Commit SHR 1:
+    -Fixed bug in signup activity
+    -Removed excess code
+    -fixed bug in login activity
+    -fixed bug in travel activity
+    -improved functionality in login activity & signup activity
+
+    Commit S4:
+    -Changed first installation pages
+    -Changed UI of activity_first

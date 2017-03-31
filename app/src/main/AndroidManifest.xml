@@ -36,6 +36,7 @@
             android:name=".TravelActivity"
             android:label="Travel"
             android:theme="@style/AppInside" />
+
         <activity
             android:name=".LifestyleActivity"
             android:label="Life Style"

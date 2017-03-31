@@ -18,37 +18,27 @@
         android:inputType="textPersonName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Name"/>
-    <TextView
-        android:id="@+id/nameWarning"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#ff0000" />
+        android:hint="Name"
+        android:padding="15dp"
+        />
+
 
     <EditText
         android:id="@+id/DOB"
         android:inputType="date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Date Of Birth"/>
-
-    <TextView
-        android:id="@+id/DOBWarning"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#ff0000"/>
+        android:hint="Date Of Birth"
+        android:padding="15dp"/>
 
 
     <EditText
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Username"/>
-    <TextView
-        android:id="@+id/usernameWarning"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#ff0000"/>
+        android:hint="Username"
+        android:padding="15dp"/>
+
 
 
     <EditText
@@ -56,12 +46,8 @@
         android:inputType="textEmailAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"/>
-    <TextView
-        android:id="@+id/emailWarning"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#ff0000"/>
+        android:hint="Email"
+        android:padding="15dp"/>
 
 
     <EditText
@@ -69,12 +55,8 @@
         android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password"/>
-    <TextView
-        android:id="@+id/passwordWarning"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#ff0000"/>
+        android:hint="Password"
+        android:padding="15dp"/>
 
 
     <EditText
@@ -82,12 +64,8 @@
         android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Re-enter Password"/>
-    <TextView
-        android:id="@+id/repasswordWarning"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#ff0000"/>
+        android:hint="Re-enter Password"
+        android:padding="15dp"/>
 
 
     <CheckBox
@@ -95,7 +73,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Accept Terms and Conditions"
-        android:textColor="@color/colorPrimaryDark"/>
+        android:textColor="@color/colorPrimaryDark"
+        android:padding="15dp"/>
 
     <Button
 
