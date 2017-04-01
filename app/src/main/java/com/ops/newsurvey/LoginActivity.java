@@ -1,5 +1,6 @@
 package com.ops.newsurvey;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,13 +16,27 @@ import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 
 public class LoginActivity extends AppCompatActivity {
 
+    PrefManager mPrefManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         EditText user =(EditText) findViewById(R.id.loginusername);
         EditText password =(EditText) findViewById(R.id.loginpassword);
 
+        mPrefManager =new PrefManager(this);
+        String usr = mPrefManager.getUser();
+        String psw = mPrefManager.getPassword();
+
+        if(!(usr.equals("0")||psw.equals("0"))){
+            user.setText(usr);
+            password.setText(psw);
+            login(findViewById(R.id.loginButton));
+        }
+
+        //TO remove errors from the views
        user.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -40,6 +55,14 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        TextView noAccount = (TextView) findViewById(R.id.no_account);
+        noAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this,SignupActivity.class);
+                LoginActivity.this.startActivity(intent);
+            }
+        });
     }
 
     public void login(View view){
@@ -50,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
         String pass = passwordView.getText().toString();
         if(authenticate(user,pass))
         {
-            startSession(id);
+            startSession(id,user,pass);
         }
           }
 
@@ -70,9 +93,9 @@ public class LoginActivity extends AppCompatActivity {
     private boolean userExist(String user){
         ////TODO check whether user exist in database or not
         if(user.equals("HP") || user.equals("RR") || user.equals("SS"))
-            return true;
+        {return true;}
         else
-            return false;
+        {return false;}
     }
     private int getId(String user){
         ////TODO this function will return Unique ID for the current user
@@ -100,9 +123,11 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    private void startSession(int id){ // id variable here not used..
+    private void startSession(int id,String user,String pass){ // id variable here not used..
         ////TODO- make an object of user
+        mPrefManager.startSession(user, pass);
         Intent intent = new Intent(this,HomeActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         finish();
     }
@@ -112,11 +137,6 @@ public class LoginActivity extends AppCompatActivity {
         warningView.setVisibility(View.VISIBLE);
         String warn = getString(warning);
         warningView.setError(warn);
-    }
-
-    private void goToSign(View view){
-        Intent intent = new Intent(this,SignupActivity.class);
-        startActivity(intent);
     }
 
     private void removeWarning(int id)

@@ -20,36 +20,45 @@
             android:name=".HomeActivity"
             android:label="Home"
             android:theme="@style/AppInside" />
-        <activity android:name=".LoginActivity" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="Login"
+            android:parentActivityName=".FirstActivity"/>
         <activity
             android:name=".SignupActivity"
-            android:label="Sign-Up" />
+            android:label="Sign-Up"
+            android:parentActivityName=".FirstActivity"/>
         <activity
             android:name=".PoliticsActivity"
             android:label="Politics"
+            android:parentActivityName=".HomeActivity"
             android:theme="@style/AppInside" />
         <activity
             android:name=".SportsActivity"
             android:label="Sports"
+            android:parentActivityName=".HomeActivity"
             android:theme="@style/AppInside" />
         <activity
             android:name=".TravelActivity"
             android:label="Travel"
+            android:parentActivityName=".HomeActivity"
             android:theme="@style/AppInside" />
 
         <activity
             android:name=".LifestyleActivity"
             android:label="Life Style"
+            android:parentActivityName=".HomeActivity"
             android:theme="@style/AppInside" />
         <activity
             android:name=".MiscActivity"
             android:label="Miscellaneous"
+            android:parentActivityName=".HomeActivity"
             android:theme="@style/AppInside" />
         <activity
             android:name=".PopActivity"
             android:label="Pop Culture"
+            android:parentActivityName=".HomeActivity"
             android:theme="@style/AppInside" />
-        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

@@ -1,7 +1,10 @@
 package com.ops.newsurvey;
 
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -13,8 +16,10 @@ public class PopActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pop);
+        setContentView(R.layout.activity_category);
 
+        ImageView banner = (ImageView) findViewById(R.id.banner);
+        banner.setImageResource(R.drawable.politics_banner);
 
         final ArrayList<Question> questions = new ArrayList<>();
         ArrayList<String> opt = new ArrayList<String>();
@@ -33,7 +38,22 @@ public class PopActivity extends AppCompatActivity {
         questions.add(new Question("Pop Question 10",opt));
 
         QuestionAdapter Adapter=new QuestionAdapter(this,questions);
-        ListView listView=(ListView) findViewById(R.id.popList);
+        ListView listView=(ListView) findViewById(R.id.List);
         listView.setAdapter(Adapter);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }
+
