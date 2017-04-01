@@ -4,10 +4,12 @@
     <color name="colorPrimaryDark">#303f9f</color>
     <color name="colorAccent">#452c93</color>
     <color name="background">#edeeff</color>
+    <color name="white">#ffffff</color>
 
 
 
     <!-- Screens background color-->
+    <color name="screen1_bg">#e0e0e0</color>
     <color name="bg_screen1">#f64c73</color>
     <color name="bg_screen2">#20d2bb</color>
     <color name="bg_screen3">#3395ff</color>

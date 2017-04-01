@@ -104,6 +104,7 @@ public class LoginActivity extends AppCompatActivity {
         ////TODO- make an object of user
         Intent intent = new Intent(this,HomeActivity.class);
         startActivity(intent);
+        finish();
     }
 
     private void showWarning(int id, int warning){
