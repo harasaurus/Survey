@@ -21,6 +21,10 @@ public class PrefManager {
 
     private static final String IS_FIRST_TIME_LAUNCH = "IsFirstTimeLaunch";
 
+    public static final String USER = "user";
+
+    public static final String PASS = "pass";
+
     public PrefManager(Context context) {
         this._context = context;
         pref = _context.getSharedPreferences(PREF_NAME, PRIVATE_MODE);
@@ -36,4 +40,35 @@ public class PrefManager {
         return pref.getBoolean(IS_FIRST_TIME_LAUNCH, true);
     }
 
+    public void initialize(){
+        editor.putString(USER,"0");
+        editor.putString(PASS,"0");
+        editor.commit();
+    }
+
+    public void startSession(String user, String pass){
+        editor.putString(USER,user);
+        editor.putString(PASS,pass);
+        editor.commit();
+    }
+
+    public String getUser(){
+        String string = pref.getString(USER,"0");
+        if(string.equals("0")){
+            initialize();
+            }
+        return string;
+    }
+
+    public String getPassword(){
+        String string = pref.getString(PASS,"0");
+        if (string.equals("0")){
+            initialize();
+        }
+        return string;
+    }
+
+    public void endSession(){
+        initialize();
+    }
 }

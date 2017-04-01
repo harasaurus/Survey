@@ -39,3 +39,10 @@ V0.1 Commit:S1
     Commit S4:
     -Changed first installation pages
     -Changed UI of activity_first
+
+    Commit :SHR2
+        -updated HomeActivity Layout
+        -updated Icons
+        -added up buttons in category layouts
+        -updated Category layouts
+        -navigation drawer added in home Activity

@@ -201,7 +201,9 @@ public class SignupActivity extends AppCompatActivity {
     private void register(){
         ////TODO register user in DB
         Intent intent = new Intent(this,HomeActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
+        finish();
     }
 
     private String getItem(int id){

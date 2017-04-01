@@ -1,51 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-tools:context="com.ops.newsurvey.HomeActivity"
-android:id="@+id/activity_home"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:orientation="vertical"
-    android:weightSum="1">
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.ops.newsurvey.HomeActivity"
+    android:id="@+id/activity_home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <RelativeLayout
+    <LinearLayout
+        android:id="@+id/homeScreenLayout"
         android:layout_width="match_parent"
-        android:layout_height="200dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1">
 
         <ImageButton
             android:id="@+id/featured"
-            android:src="@drawable/banner1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true" />
-        <ImageButton
-            android:src="@drawable/drawer_white"
-            android:layout_height="48dp"
-            android:layout_width="48dp"
-            android:scaleType="centerCrop"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"/>
+            android:layout_height="230dp"
+            android:src="@drawable/banner1" />
 
-
-    </RelativeLayout>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:paddingTop="2dp"
-        android:layout_alignParentTop="true">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_height="130dp"
+                android:layout_height="140dp"
                 android:layout_width="match_parent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                >
 
 
                 <ImageButton
@@ -75,12 +56,12 @@ android:orientation="vertical"
             </LinearLayout>
 
             <LinearLayout
-                android:layout_height="130dp"
+                android:layout_height="140dp"
                 android:layout_width="match_parent"
                 android:orientation="horizontal">
                 <ImageButton
                     android:id="@+id/popIcon"
-                    android:src="@drawable/gift"
+                    android:src="@drawable/icon_pop"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -103,7 +84,67 @@ android:orientation="vertical"
 
             </LinearLayout>
         </LinearLayout>
-    </ScrollView>
-</LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/homeDrawer"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="end"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:background="#111">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ft"/>
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/ftd"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="Profile"
+            android:background="#D8D8D8"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="Statistics"
+            android:background="#D8D8D8"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="Create"
+            android:background="#D8D8D8"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="Logout"
+            android:background="#D8D8D8"/>
+
+    </LinearLayout>
+</android.support.v4.widget.DrawerLayout>
 
