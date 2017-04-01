@@ -11,10 +11,11 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.ops.newsurvey.PoliticsActivity">
     <ImageView
-        android:src="@drawable/ftd"
+        android:src="@drawable/politics_imageholder"
         android:id="@+id/banner_politics"
         android:layout_width="match_parent"
-        android:layout_height="160dp" />
+        android:layout_height="160dp"
+        android:scaleType="centerCrop"/>
     <ListView
         android:padding="10dp"
         android:layout_below="@+id/banner_politics"

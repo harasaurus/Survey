@@ -7,6 +7,8 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -14,22 +16,12 @@ public class MainActivity extends AppCompatActivity {
         nextstep();
     }
 
-    public void nextstep(){
 
-    //boolean rookie=first_TF();
-      //  if(rookie){
+    public void nextstep(){
             Intent ontent=new Intent(this,FirstActivity.class);
             startActivity(ontent);
-      //  }
-      //  else{
-      //      Intent notent=new Intent(this,LoginActivity.class);
-      //      startActivity(notent);
-        }
-      //}
+        finish();
+    }
 
-      //  public boolean first_TF(){
-        //// TODO:Check if user have opened app for first time if yes 'rookie'=true else false
-      //    return true;
-      //  }
 
 }
