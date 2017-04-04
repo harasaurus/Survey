@@ -10,7 +10,7 @@
         <item name="android:colorBackground">@color/background</item>
     </style>
 
-    <style name="AppInside" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppInside" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
