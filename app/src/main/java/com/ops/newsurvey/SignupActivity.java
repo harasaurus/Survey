@@ -3,6 +3,7 @@ package com.ops.newsurvey;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -15,6 +16,65 @@ public class SignupActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+        EditText name = (EditText) findViewById(R.id.name);
+        EditText user = (EditText) findViewById(R.id.username);
+        EditText dob = (EditText) findViewById(R.id.DOB);
+        EditText email = (EditText) findViewById(R.id.email);
+        EditText pass = (EditText) findViewById(R.id.password);
+        EditText repass = (EditText) findViewById(R.id.repassword);
+
+        name.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                removeWarning(v.getId());
+                return true;
+            }
+        });
+
+        user.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                removeWarning(v.getId());
+                return true;
+            }
+        });
+
+        dob.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                removeWarning(v.getId());
+                return true;
+            }
+        });
+
+        email.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                removeWarning(v.getId());
+                return true;
+            }
+        });
+
+        pass.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                removeWarning(v.getId());
+                return true;
+            }
+        });
+
+        repass.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                removeWarning(v.getId());
+                return true;
+            }
+        });
+    }
+
+    private void removeWarning(int id){
+        TextView view = (TextView) findViewById(id);
+        view.setError(null);
     }
 
     public void signup(View view){
@@ -37,7 +97,8 @@ public class SignupActivity extends AppCompatActivity {
 
     private boolean authenticated(String name, String email, String DOB, String username, String pass1, String pass2) {
         if (!(name.isEmpty() || DOB.isEmpty() || username.isEmpty() || pass1.isEmpty() || pass2.isEmpty())) {
-            if (nameIsAcceptable(name) && usernameIsUnique(username) && emailIsUnique(email) && emailIsValid(email) && isAdult(DOB) && passwordMatching(pass1, pass2) && passwordIsAcceptable(pass1)) {
+            if (nameIsAcceptable(name) && usernameIsUnique(username) && emailIsUnique(email) && emailIsValid(email)
+                    && isAdult(DOB) && passwordMatching(pass1, pass2) && passwordIsAcceptable(pass1)) {
                 return true;
             } else {
                 return false;
@@ -52,7 +113,7 @@ public class SignupActivity extends AppCompatActivity {
         if(true)
         {return true;}
         else
-        {showWarning(R.id.usernameWarning, R.string.usernameNotUnique);
+        {showWarning(R.id.username, R.string.usernameNotUnique);
          return false;}
     }
 
@@ -61,7 +122,7 @@ public class SignupActivity extends AppCompatActivity {
     if(true)
     {return true;}
     else
-    {showWarning(R.id.nameWarning, R.string.nameNotAcceptable);
+    {showWarning(R.id.name, R.string.nameNotAcceptable);
     return false;}
     }
 
@@ -71,7 +132,7 @@ public class SignupActivity extends AppCompatActivity {
         if(true)
     {return true;}
     else
-    {showWarning(R.id.emailWarning, R.string.emailNotUnique);
+    {showWarning(R.id.email, R.string.emailNotUnique);
     return false;}
     }
 
@@ -80,7 +141,7 @@ public class SignupActivity extends AppCompatActivity {
         if (true)
     {return true;}
     else
-    {showWarning(R.id.emailWarning, R.string.emailNotValid);
+    {showWarning(R.id.email, R.string.emailNotValid);
     return false;}
     }
 
@@ -89,7 +150,7 @@ public class SignupActivity extends AppCompatActivity {
         if(true)
     {return true;}
     else
-    {showWarning(R.id.DOBWarning, R.string.notAdult);
+    {showWarning(R.id.DOB, R.string.notAdult);
     return false;}
     }
 
@@ -97,40 +158,28 @@ public class SignupActivity extends AppCompatActivity {
     if(pI.equals(pII))
     {return true;}
     else
-    {showWarning(R.id.repasswordWarning,R.string.passwordNotMatching);
-     showWarning(R.id.passwordWarning,R.string.passwordNotMatching);
+    {showWarning(R.id.repassword,R.string.passwordNotMatching);
+     showWarning(R.id.password,R.string.passwordNotMatching);
      return false;}
     }
 
     private boolean passwordIsAcceptable(String pass){
     ////TODO check if password follows the standards i.e.-1 smallcase char,1 caps,1 number, 1 special character
-        if(haveSmallAlpha(pass)&&haveCaps(pass)&&haveNumber(pass)&&haveSpclChar(pass))
+        if(true)
     {return true;}
     else
-    {showWarning(R.id.repasswordWarning,R.string.passwordNotAcceptable);
-    showWarning(R.id.passwordWarning,R.string.passwordNotAcceptable);
-    return true;
-        //return false;
+    {showWarning(R.id.repassword,R.string.passwordNotAcceptable);
+    showWarning(R.id.password,R.string.passwordNotAcceptable);
+    return false;
         }
     }
 
-    /*private void removeWarnings(){
-        removeWarning(R.id.nameWarning);
-        removeWarning(R.id.emailWarning);
-        removeWarning(R.id.usernameWarning);
-        removeWarning(R.id.passwordWarning);
-        removeWarning(R.id.repasswordWarning);
-    }*/
 
-    private void removeWarning(int id){
-        TextView textView = (TextView) findViewById(id);
-        textView.setText("");
-    }
 
     private void showWarning(int id,int warning){
         TextView textView = (TextView) findViewById(id);
         String warn = getString(warning);
-        textView.setText(warn);
+        textView.setError(warn);
     }
 
     private void emptyFieldHandler(){
@@ -152,7 +201,9 @@ public class SignupActivity extends AppCompatActivity {
     private void register(){
         ////TODO register user in DB
         Intent intent = new Intent(this,HomeActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
+        finish();
     }
 
     private String getItem(int id){
@@ -161,7 +212,7 @@ public class SignupActivity extends AppCompatActivity {
         return Item;
     }
 
-    private boolean haveSmallAlpha(String password){
+   /* private boolean haveSmallAlpha(String password){
         if(password.matches(".* + [a-z] + .*")){
             return true;
         }
@@ -193,6 +244,6 @@ public class SignupActivity extends AppCompatActivity {
         }else{
             return false;
         }
-    }
+    }*/
 }
 

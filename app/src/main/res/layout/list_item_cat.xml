@@ -5,9 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView android:id="@+id/ques_text"
+    <TextView
+        android:id="@+id/ques_text"
         android:layout_width="match_parent"
-        android:layout_height="60dp" />
+        android:layout_height="wrap_content"
+        android:layout_margin="2.8dp"
+        android:background="@color/white"
+        android:textSize="20dp"
+        android:padding="15dp"/>
+
 
 
 </LinearLayout>

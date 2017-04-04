@@ -2,96 +2,166 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.ops.newsurvey.HomeActivity"
     android:id="@+id/activity_home"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:layout_width="match_parent"
     android:orientation="vertical">
-    <RelativeLayout
+
+<android.support.v7.widget.Toolbar
+    android:id="@+id/home_toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="?attr/colorPrimary"
+    android:elevation="4dp"
+    android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+<android.support.v4.widget.DrawerLayout
+    android:id="@+id/home_drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/homeScreenLayout"
         android:layout_width="match_parent"
-        android:layout_height="250dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1">
+
         <ImageButton
             android:id="@+id/featured"
-            android:src="@drawable/ftd"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-        <ImageButton
-            android:src="@drawable/draw"
-            android:layout_height="48dp"
-            android:layout_width="48dp"
-            android:scaleType="centerCrop"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"/>
-    </RelativeLayout>
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="600dp"
-        android:layout_weight="1">
+            android:layout_height="230dp"
+            android:src="@drawable/banner1" />
+
+
+        <LinearLayout
+                android:layout_height="140dp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                >
+
+
+                <ImageButton
+                    android:id="@+id/polIcon"
+                    android:src="@drawable/icon_pol"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    android:layout_width="0dp"
+                    android:layout_margin="1dp"/>
+
+                <ImageButton
+                    android:id="@+id/spoIcon"
+                    android:src="@drawable/icon_sports"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"/>
+                <ImageButton
+                    android:id="@+id/traIcon"
+                    android:src="@drawable/icon_travel"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_height="140dp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal">
+                <ImageButton
+                    android:id="@+id/popIcon"
+                    android:src="@drawable/icon_pop"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"/>
+                <ImageButton
+                    android:id="@+id/lifIcon"
+                    android:src="@drawable/icon_lifestyle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"/>
+
+                <ImageButton
+                    android:id="@+id/misIcon"
+                    android:src="@drawable/icon_misc"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:orientation="vertical">
-        <LinearLayout
-            android:layout_height="100dp"
+        android:id="@+id/homeDrawer"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="start"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:background="#111">
+
+        <RelativeLayout
             android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ft"/>
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/ftd"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1"
-            android:orientation="horizontal">
-            <ImageButton
-                android:id="@+id/polIcon"
-                android:src="@drawable/logo"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:scaleType="centerCrop"/>
-            <ImageButton
-                android:id="@+id/spoIcon"
-                android:src="@drawable/logo"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:scaleType="centerCrop"/>
-            <ImageButton
-                android:id="@+id/traIcon"
-                android:src="@drawable/logo"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:scaleType="centerCrop"/>
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="Profile"
+            android:background="#D8D8D8"/>
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_height="100dp"
+        <TextView
             android:layout_width="match_parent"
-            android:orientation="horizontal">
-            <ImageButton
-                android:id="@+id/popIcon"
-                android:src="@drawable/logo"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:scaleType="centerCrop"/>
-            <ImageButton
-                android:id="@+id/lifIcon"
-                android:src="@drawable/logo"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:scaleType="centerCrop"/>
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="Statistics"
+            android:background="#D8D8D8"/>
 
-            <ImageButton
-                android:id="@+id/misIcon"
-                android:src="@drawable/logo"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:scaleType="centerCrop"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="Create"
+            android:background="#D8D8D8"/>
 
-        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="Logout"
+            android:background="#D8D8D8"/>
+
     </LinearLayout>
-    </ScrollView>
+</android.support.v4.widget.DrawerLayout>
+
 </LinearLayout>

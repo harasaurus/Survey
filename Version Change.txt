@@ -1,4 +1,8 @@
-V0.1 Commit:S1
+V0.1
+    Commit: H1
+    -Initial Commit
+
+    Commit: S1
     -Labels removed from android manifest
     -created PoliticsActivity Activity
     -updated Question class
@@ -7,8 +11,45 @@ V0.1 Commit:S1
     -updated colors
     -removed ActionBars
 
-    Commit:H2
+    Commit: H2
     -Added path to different activities for each categories in HomeActivity
     -Created category activities
     -Fixed an error for constructors in Question
     -Created QuestionAdapter
+
+    Commit: S2
+    -changed the icons.
+    -perfected layouts
+    -Changed Home Screen
+    -Changed UI
+    -added question_display.xml
+    -added question_stack.xml @ values
+
+    Commit: S3
+    -Changed UI of Categories
+    -Added first time installation pages
+    -Added PrefManager & WelcomeActivity(temporary, they will be modified )
+    -Added activity_welcome.xml, welcome_slide1.xml - welcome_slide4.xml
+
+    Commit: SHR1
+    -Fixed bug in signup activity
+    -Removed excess code
+    -fixed bug in login activity
+    -fixed bug in travel activity
+    -improved functionality in login activity & signup activity
+
+    Commit: S4
+    -Changed first installation pages
+    -Changed UI of activity_first
+
+    Commit: SHR2
+        -updated HomeActivity Layout
+        -updated Icons
+        -added up buttons in category layouts
+        -updated Category layouts
+        -navigation drawer added in home Activity
+
+    Commit: H3
+        -Changed themes
+        -added custom toolbars in home and category activities
+        -improved navigation drawer in home activity

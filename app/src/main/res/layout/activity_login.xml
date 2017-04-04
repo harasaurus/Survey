@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--Use ScrollView as keyboard hides the password text box-->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_login"
@@ -7,78 +10,69 @@
     android:layout_height="match_parent"
     tools:context="com.ops.newsurvey.LoginActivity"
     android:orientation="vertical"
-    android:backgroundTint="@color/background">
+    android:padding="20dp"
+    android:gravity="center">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:contentDescription="@string/app_name"
+        android:layout_width="140dp"
+        android:layout_height="145dp"
         app:srcCompat="@drawable/logo"
-        android:layout_marginTop="75dp"
         android:id="@+id/imageView3"
-        android:layout_below="@+id/loginWarning"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginBottom="55dp"/>
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
+        android:inputType="text"
         android:ems="10"
         android:id="@+id/loginusername"
         android:hint="Type your username"
         android:textAlignment="center"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:textColor="@color/colorAccent"/>
+        android:fontFamily="sans-serif"
+        android:textColor="@color/colorPrimaryDark"/>
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+
+
         android:inputType="textPassword"
         android:ems="10"
-        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif"
+        android:textAlignment="center"
         android:id="@+id/loginpassword"
         android:hint="Type your password"
-        android:layout_below="@+id/loginusername"
-        android:layout_alignStart="@+id/loginusername"
-        android:textColor="@color/colorAccent"/>
+        android:textColor="@color/colorPrimaryDark"/>
 
     <Button
         android:text="Login"
-        android:layout_width="370dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="10dp"
-        android:id="@+id/button"
-        android:layout_below="@+id/loginpassword"
-        android:layout_centerHorizontal="true"
-        />
-
-    <!-- warnings -->
-    <TextView
-        android:id="@+id/loginWarning"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:textColor="#ff0000"/>
+        android:layout_height="62dp"
+        android:layout_marginTop="30dp"
+        android:id="@+id/loginButton"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="#fff"
+        android:onClick="login"/>
+
 
     <TextView
         android:text="forgot password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="20dp"
         android:id="@+id/textView"
-        android:textColor="@color/colorAccent"/>
+        android:textColor="@color/colorPrimaryDark"/>
 
     <TextView
-        android:text="Don't have an account"
+        android:text="Don't have an account? Signup here "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="50dp"
-        android:id="@+id/textView2"
-        android:onClick="goToSign"
-        android:textColor="@color/colorAccent"/>
+        android:id="@+id/no_account"
+        android:onClick="sign"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginTop="20dp"/>
 
-</RelativeLayout>
+
+</LinearLayout>
