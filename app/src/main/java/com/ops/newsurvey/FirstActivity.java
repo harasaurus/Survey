@@ -1,9 +1,8 @@
 package com.ops.newsurvey;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
@@ -32,5 +31,13 @@ public class FirstActivity extends AppCompatActivity {
             }
         });
 
+        //to check if user have logged on previously
+        PrefManager prefManager = new PrefManager(this);
+        if (!(prefManager.getUser().equals("0")))
+        {
+            Intent intent = new Intent(this,LoginActivity.class);
+            startActivity(intent);
+        }
     }
+
 }
