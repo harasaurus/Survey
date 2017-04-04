@@ -53,3 +53,5 @@ V0.1
         -Changed themes
         -added custom toolbars in home and category activities
         -improved navigation drawer in home activity
+    Commit: R1
+        -forget password

@@ -55,6 +55,14 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        TextView forget = (TextView) findViewById(R.id.forget);
+        forget.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this,ForgetpasswordActivity.class);
+                startActivity(intent);
+            }
+        });
         TextView noAccount = (TextView) findViewById(R.id.no_account);
         noAccount.setOnClickListener(new View.OnClickListener() {
             @Override
