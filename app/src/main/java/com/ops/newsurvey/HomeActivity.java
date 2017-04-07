@@ -38,6 +38,7 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 PrefManager prefmanager = new PrefManager(HomeActivity.this);
                 prefmanager.endSession();
+                new User(HomeActivity.this).clearUID();
 
                 Intent intent = new Intent(HomeActivity.this,FirstActivity.class);
                startActivity(intent);

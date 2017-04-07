@@ -19,10 +19,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Name"
-        android:padding="15dp"/>
+        android:padding="15dp" />
 
     <!--<EditText
-        android:id="@+id/gender"
+        android:id="@+id/dob"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Date Of Birth"
@@ -75,6 +75,7 @@
             android:text="Male" />
         <RadioButton
             android:id="@+id/genderF"
+            android:checked="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Female" />
@@ -100,6 +101,7 @@
         android:text="Sign-Up"
         android:background="@color/colorPrimaryDark"
         android:textColor="#fff"
+        android:onClick="signup"
         android:layout_marginTop="30dp"/>
 
 </LinearLayout>
