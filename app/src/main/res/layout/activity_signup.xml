@@ -19,6 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Name"
+        android:imeOptions="actionNext"
         android:padding="15dp"
         />
 
@@ -29,6 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Date Of Birth"
+        android:imeOptions="actionNext"
         android:padding="15dp"/>
 
 
@@ -37,6 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Username"
+        android:imeOptions="actionNext"
         android:padding="15dp"/>
 
 
@@ -47,6 +50,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email"
+        android:imeOptions="actionNext"
         android:padding="15dp"/>
 
 
@@ -56,6 +60,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
+        android:imeOptions="actionNext"
         android:padding="15dp"/>
 
 
@@ -65,6 +70,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Re-enter Password"
+        android:imeOptions="actionNext"
         android:padding="15dp"/>
 
 
@@ -74,6 +80,7 @@
         android:layout_height="wrap_content"
         android:text="Accept Terms and Conditions"
         android:textColor="@color/colorPrimaryDark"
+        android:imeOptions="actionDone"
         android:padding="15dp"/>
 
     <Button

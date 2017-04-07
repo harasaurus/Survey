@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -13,6 +15,9 @@ import static android.R.attr.breadCrumbShortTitle;
 import static android.R.attr.id;
 import static android.R.attr.switchMinWidth;
 import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
+import static com.ops.newsurvey.R.id.loginButton;
+import static com.ops.newsurvey.R.id.loginpassword;
+import static com.ops.newsurvey.R.id.loginusername;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -23,8 +28,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        EditText user =(EditText) findViewById(R.id.loginusername);
-        EditText password =(EditText) findViewById(R.id.loginpassword);
+        EditText user =(EditText) findViewById(loginusername);
+        EditText password =(EditText) findViewById(loginpassword);
 
         mPrefManager =new PrefManager(this);
         String usr = mPrefManager.getUser();
@@ -33,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         if(!(usr.equals("0")||psw.equals("0"))){
             user.setText(usr);
             password.setText(psw);
-            login(findViewById(R.id.loginButton));
+            login(findViewById(loginButton));
         }
 
         //TO remove errors from the views
@@ -52,6 +57,33 @@ public class LoginActivity extends AppCompatActivity {
                 int id = v.getId();
                 removeWarning(id);
                 return true;
+            }
+        });
+        EditText first_edit = (EditText) findViewById(loginusername);
+        final EditText next_edit = (EditText) findViewById(loginpassword);
+        final Button login_button = (Button) findViewById(loginButton);
+        first_edit.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+
+                if(actionId == 0 || actionId== EditorInfo.IME_ACTION_DONE)
+                {
+                    next_edit.requestFocus();
+                }
+                return false;
+            }
+        });
+        next_edit.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+
+                if(actionId == 0 || actionId== EditorInfo.IME_ACTION_DONE)
+                {
+                    login_button.requestFocus();
+                }
+                return false;
             }
         });
 
@@ -74,10 +106,10 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void login(View view){
-        EditText usernameView = (EditText) findViewById(R.id.loginusername);
+        EditText usernameView = (EditText) findViewById(loginusername);
         String user= usernameView.getText().toString();
 
-        EditText passwordView = (EditText) findViewById(R.id.loginpassword);
+        EditText passwordView = (EditText) findViewById(loginpassword);
         String pass = passwordView.getText().toString();
         if(authenticate(user,pass))
         {
@@ -92,8 +124,8 @@ public class LoginActivity extends AppCompatActivity {
                return true;
            }else return false;
         }else
-            showWarning(R.id.loginusername,R.string.loginError);
-            showWarning(R.id.loginpassword,R.string.loginError);
+            showWarning(loginusername,R.string.loginError);
+            showWarning(loginpassword,R.string.loginError);
 
         return false;
     }
