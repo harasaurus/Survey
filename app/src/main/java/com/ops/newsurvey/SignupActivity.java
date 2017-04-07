@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class SignupActivity extends AppCompatActivity {
 
@@ -18,7 +17,7 @@ public class SignupActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
         EditText name = (EditText) findViewById(R.id.name);
         EditText user = (EditText) findViewById(R.id.username);
-        EditText dob = (EditText) findViewById(R.id.DOB);
+        EditText dob = (EditText) findViewById(R.id.gender);
         EditText email = (EditText) findViewById(R.id.email);
         EditText pass = (EditText) findViewById(R.id.password);
         EditText repass = (EditText) findViewById(R.id.repassword);
@@ -83,12 +82,12 @@ public class SignupActivity extends AppCompatActivity {
         if(terms.isChecked()) {
             String name = getItem(R.id.name);
             String email = getItem(R.id.email);
-            String DOB = getItem(R.id.DOB);
+            String gender = getItem(R.id.gender);
             String username = getItem(R.id.username);
             String pass1 = getItem(R.id.password);
             String pass2 = getItem(R.id.repassword);
 
-            if(authenticated(name, email, DOB, username, pass1, pass2)){
+            if(authenticated(name, email, gender, username, pass1, pass2)){
                 register();
             }
 
@@ -150,7 +149,7 @@ public class SignupActivity extends AppCompatActivity {
         if(true)
     {return true;}
     else
-    {showWarning(R.id.DOB, R.string.notAdult);
+    {showWarning(R.id.gender, R.string.notAdult);
     return false;}
     }
 
@@ -184,7 +183,7 @@ public class SignupActivity extends AppCompatActivity {
 
     private void emptyFieldHandler(){
         checkEmpty(R.id.name);
-        checkEmpty(R.id.DOB);
+        checkEmpty(R.id.gender);
         checkEmpty(R.id.username);
         checkEmpty(R.id.email);
         checkEmpty(R.id.password);

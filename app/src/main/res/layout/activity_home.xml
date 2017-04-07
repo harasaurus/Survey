@@ -28,20 +28,29 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="1">
-
-        <ImageButton
-            android:id="@+id/featured"
+        android:background="@color/background">
+        <!--used viewpager instead of imagebutton for slideshow-->
+        <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager"
             android:layout_width="match_parent"
-            android:layout_height="230dp"
-            android:src="@drawable/banner1" />
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            android:background="#fff"/>
 
 
         <LinearLayout
-                android:layout_height="140dp"
-                android:layout_width="match_parent"
-                android:orientation="horizontal"
-                >
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="10dp">
 
 
                 <ImageButton
@@ -51,7 +60,7 @@
                     android:layout_weight="1"
                     android:scaleType="centerCrop"
                     android:layout_width="0dp"
-                    android:layout_margin="1dp"/>
+                    android:background="@null"/>
 
                 <ImageButton
                     android:id="@+id/spoIcon"
@@ -59,35 +68,48 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:scaleType="centerCrop"/>
+                    android:scaleType="centerCrop"
+                    android:background="@null"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"/>
                 <ImageButton
                     android:id="@+id/traIcon"
                     android:src="@drawable/icon_travel"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:scaleType="centerCrop"/>
+                    android:scaleType="centerCrop"
+                    android:background="@null"/>
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_height="140dp"
                 android:layout_width="match_parent"
-                android:orientation="horizontal">
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginLeft="4dp">
+
                 <ImageButton
                     android:id="@+id/popIcon"
                     android:src="@drawable/icon_pop"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:scaleType="centerCrop"/>
+                    android:scaleType="centerCrop"
+                    android:background="@null"/>
                 <ImageButton
                     android:id="@+id/lifIcon"
                     android:src="@drawable/icon_lifestyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:scaleType="centerCrop"/>
+                    android:scaleType="centerCrop"
+                    android:background="@null"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"/>
 
                 <ImageButton
                     android:id="@+id/misIcon"
@@ -95,11 +117,12 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:scaleType="centerCrop"/>
+                    android:scaleType="centerCrop"
+                    android:background="@null"/>
 
             </LinearLayout>
         </LinearLayout>
-
+<!--navigation drawer-->
     <LinearLayout
         android:id="@+id/homeDrawer"
         android:layout_width="250dp"
@@ -117,25 +140,29 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ft"/>
+                android:src="@drawable/ft"
+                android:layout_alignParentTop="true"
+                android:layout_alignStart="@+id/avatar" />
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
-                android:src="@drawable/ftd"/>
+                android:background="@drawable/avatar_generic"
+                android:id="@+id/avatar"/>
 
         </RelativeLayout>
 
         <TextView
+            android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:background="#D8D8D8"
             android:padding="@dimen/activity_horizontal_margin"
-            android:text="Profile"
-            android:background="#D8D8D8"/>
+            android:text="Profile" />
 
         <TextView
             android:layout_width="match_parent"
@@ -154,12 +181,13 @@
             android:background="#D8D8D8"/>
 
         <TextView
+            android:id="@+id/Logout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:background="#D8D8D8"
             android:padding="@dimen/activity_horizontal_margin"
-            android:text="Logout"
-            android:background="#D8D8D8"/>
+            android:text="Logout"/>
 
     </LinearLayout>
 </android.support.v4.widget.DrawerLayout>

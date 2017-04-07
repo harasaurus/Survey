@@ -53,3 +53,9 @@ V0.1
         -Changed themes
         -added custom toolbars in home and category activities
         -improved navigation drawer in home activity
+
+    Commit: S5
+        -Changed Icons
+        -Added slider in HomeActivity
+        -Changed design in Navigation drawer
+        -Added logout function to at navigation drawer.

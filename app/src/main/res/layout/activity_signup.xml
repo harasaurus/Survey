@@ -19,18 +19,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Name"
-        android:padding="15dp"
-        />
+        android:padding="15dp"/>
 
-
-    <EditText
-        android:id="@+id/DOB"
-        android:inputType="date"
+    <!--<EditText
+        android:id="@+id/gender"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Date Of Birth"
-        android:padding="15dp"/>
-
+        android:inputType="date"
+        android:padding="15dp" />-->
 
     <EditText
         android:id="@+id/username"
@@ -38,8 +35,6 @@
         android:layout_height="wrap_content"
         android:hint="Username"
         android:padding="15dp"/>
-
-
 
     <EditText
         android:id="@+id/email"
@@ -49,7 +44,6 @@
         android:hint="Email"
         android:padding="15dp"/>
 
-
     <EditText
         android:id="@+id/password"
         android:inputType="textPassword"
@@ -57,7 +51,6 @@
         android:layout_height="wrap_content"
         android:hint="Password"
         android:padding="15dp"/>
-
 
     <EditText
         android:id="@+id/repassword"
@@ -67,6 +60,30 @@
         android:hint="Re-enter Password"
         android:padding="15dp"/>
 
+    <RadioGroup
+        android:id="@+id/gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp">
+
+        <RadioButton
+            android:id="@+id/genderM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male" />
+        <RadioButton
+            android:id="@+id/genderF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female" />
+        <RadioButton
+            android:id="@+id/genderO"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Others" />
+    </RadioGroup>
 
     <CheckBox
         android:id="@+id/terms"
@@ -77,12 +94,10 @@
         android:padding="15dp"/>
 
     <Button
-
         android:id="@+id/signUpButton"
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:text="Sign-Up"
-        android:onClick="signup"
         android:background="@color/colorPrimaryDark"
         android:textColor="#fff"
         android:layout_marginTop="30dp"/>

@@ -9,52 +9,62 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".WelcomeActivity">
-            <intent-filter>
+                 <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FirstActivity" />
+        <activity android:name=".FirstActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".HomeActivity"
             android:label="Home"
-            android:theme="@style/AppInside" />
+            android:theme="@style/AppInside"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".LoginActivity"
             android:label="Login"
-            android:parentActivityName=".FirstActivity"/>
+            android:parentActivityName=".FirstActivity"
+            android:screenOrientation="portrait"/>
         <activity
+            android:screenOrientation="portrait"
             android:name=".SignupActivity"
             android:label="Sign-Up"
             android:parentActivityName=".FirstActivity"/>
         <activity
+            android:screenOrientation="portrait"
             android:name=".PoliticsActivity"
             android:label="Politics"
             android:parentActivityName=".HomeActivity"
             android:theme="@style/AppInside" />
         <activity
+            android:screenOrientation="portrait"
             android:name=".SportsActivity"
             android:label="Sports"
             android:parentActivityName=".HomeActivity"
             android:theme="@style/AppInside" />
         <activity
+            android:screenOrientation="portrait"
             android:name=".TravelActivity"
             android:label="Travel"
             android:parentActivityName=".HomeActivity"
             android:theme="@style/AppInside" />
 
         <activity
+            android:screenOrientation="portrait"
             android:name=".LifestyleActivity"
             android:label="Life Style"
             android:parentActivityName=".HomeActivity"
             android:theme="@style/AppInside" />
         <activity
+            android:screenOrientation="portrait"
             android:name=".MiscActivity"
             android:label="Miscellaneous"
             android:parentActivityName=".HomeActivity"
             android:theme="@style/AppInside" />
         <activity
+            android:screenOrientation="portrait"
             android:name=".PopActivity"
             android:label="Pop Culture"
             android:parentActivityName=".HomeActivity"

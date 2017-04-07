@@ -1,25 +1,26 @@
 package com.ops.newsurvey;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.support.v4.app.NavUtils;
+import android.os.Bundle;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
+import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.ListView;
-
-import static android.R.attr.onClick;
+import android.widget.TextView;
 
 public class HomeActivity extends AppCompatActivity {
+    private ViewPager viewPager;
+    private MyViewPagerAdapter myViewPagerAdapter;
+    private int[] images;
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -29,6 +30,20 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        //logout for navigation drawer
+        TextView logout = (TextView) findViewById(R.id.Logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PrefManager prefmanager = new PrefManager(HomeActivity.this);
+                prefmanager.endSession();
+
+                Intent intent = new Intent(HomeActivity.this,FirstActivity.class);
+               startActivity(intent);
+            }
+        });
+
 
         ImageButton political =(ImageButton) findViewById(R.id.polIcon);
         ImageButton athletic =(ImageButton) findViewById(R.id.spoIcon);
@@ -108,6 +123,12 @@ public class HomeActivity extends AppCompatActivity {
             }
         };
         mDrawerLayout.addDrawerListener(mDrawerToggle);
+        //home page slider
+        viewPager = (ViewPager) findViewById(R.id.view_pager);
+        images = new int[]{R.layout.slide1,R.layout.slide2,R.layout.slide3};
+
+        myViewPagerAdapter = new MyViewPagerAdapter();
+        viewPager.setAdapter(myViewPagerAdapter);
     }
 
     @Override
@@ -128,6 +149,43 @@ public class HomeActivity extends AppCompatActivity {
         // Pass the event to ActionBarDrawerToggle, if it returns
         // true, then it has handled the app icon touch event
         if (mDrawerToggle.onOptionsItemSelected(item)){return true;}
-                return super.onOptionsItemSelected(item);
+        return super.onOptionsItemSelected(item);
+    }
+// slider of home page
+    private int getItem(int i) {
+        return viewPager.getCurrentItem() + i;
+    }
+    /**
+     * View pager adapter
+     */
+    public class MyViewPagerAdapter extends PagerAdapter {
+        private LayoutInflater layoutInflater;
+
+        public MyViewPagerAdapter() {
+        }
+        @Override
+        public Object instantiateItem(ViewGroup container, int position) {
+            layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+            View view = layoutInflater.inflate(images[position], container, false);
+            container.addView(view);
+            return view;
+        }
+
+        @Override
+        public int getCount() {
+            return images.length;
+        }
+
+        @Override
+        public boolean isViewFromObject(View view, Object obj) {
+            return view == obj;
+        }
+
+        @Override
+        public void destroyItem(ViewGroup container, int position, Object object) {
+            View view = (View) object;
+            container.removeView(view);
+        }
     }
 }
