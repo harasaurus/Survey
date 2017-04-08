@@ -56,4 +56,4 @@ V0.1
     Commit: R1
         -forget password
     Commit : R2
-        -moving to next text from prev. text from keyboard in sign in
+        -moving to next text from prev. text from keyboard in sign in..
