@@ -63,3 +63,6 @@ V0.1
     Commit: H4
         -Implemented Database for user data
         -added navigation.xml
+
+    Commit: H5
+        -implemented database with category activities and logout button in the drawer

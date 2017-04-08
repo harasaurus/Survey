@@ -20,21 +20,9 @@ public class LifestyleActivity extends AppCompatActivity {
         ImageView banner = (ImageView) findViewById(R.id.banner);
         banner.setImageResource(R.drawable.politics_banner);
 
-        final ArrayList<Question> questions = new ArrayList<>();
-        ArrayList<String> opt = new ArrayList<String>();
-        opt.add("Yes");
-        opt.add("No");
-        opt.add("Can't Say");
-        questions.add(new Question("Lifestyle Question 1",opt));
-        questions.add(new Question("Lifestyle Question 2",opt));
-        questions.add(new Question("Lifestyle Question 3",opt));
-        questions.add(new Question("Lifestyle Question 4",opt));
-        questions.add(new Question("Lifestyle Question 5",opt));
-        questions.add(new Question("Lifestyle Question 6",opt));
-        questions.add(new Question("Lifestyle Question 7",opt));
-        questions.add(new Question("Lifestyle Question 8",opt));
-        questions.add(new Question("Lifestyle Question 9",opt));
-        questions.add(new Question("Lifestyle Question 10",opt));
+        DatabaseManager manager = new DatabaseManager(this);
+        final ArrayList<Question> questions = manager.getAllQuestionsByCategory("LIF");
+
 
         QuestionAdapter Adapter=new QuestionAdapter(this,questions);
         ListView listView=(ListView) findViewById(R.id.List);

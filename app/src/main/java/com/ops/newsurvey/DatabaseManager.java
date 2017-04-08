@@ -63,10 +63,10 @@ class DatabaseManager extends SQLiteOpenHelper {
                 + KEY_QTEXT + " TEXT, " + KEY_RESPONSES + " NUMBER)";
         db.execSQL(CreateTable2);
 
-        String CreateTable3 = "CREATE TABLE " + TABLE_ACTIVITY + " (" + KEY_UID + " INTEGER," +KEY_QID+ " INTEGER)";
+        String CreateTable3 = "CREATE TABLE " + TABLE_ACTIVITY + " (" + KEY_UID + " INTEGER, " +KEY_QID+ " INTEGER)";
         db.execSQL(CreateTable3);
 
-        String CreateTable4 = "CREATE TABLE " + TABLE_OPT + " (" + KEY_QID + " INTEGER PRIMARY KEY, " + KEY_OPTIONS + " TEXT, "
+        String CreateTable4 = "CREATE TABLE " + TABLE_OPT + " (" + KEY_QID + " INTEGER, " + KEY_OPTIONS + " TEXT, "
                 + KEY_RESULTS + " INTEGER)";
         db.execSQL(CreateTable4);
     }
@@ -204,15 +204,48 @@ class DatabaseManager extends SQLiteOpenHelper {
          db.insert(TABLE_QS , null , values);
          db.close();
 
-         db = getWritableDatabase();
+         SQLiteDatabase db1 = getWritableDatabase();
          int length = opts.size();
          for(int i=0; i<length; i++){
+             values.clear();
             values.put(KEY_QID , Qid);
             values.put(KEY_OPTIONS , opts.get(i));
-            values.put(KEY_RESPONSES , results.get(i));
-             db.insert(TABLE_OPT , null , values);
+            values.put(KEY_RESULTS , results.get(i));
+             db1.insert(TABLE_OPT , null , values);
          }
-        db.close();
+        db1.close();
+     }
+
+     public ArrayList<Question> getAllQuestionsByCategory(String cat){
+         ArrayList<Question> questions = new ArrayList<Question>();
+         SQLiteDatabase db = this.getReadableDatabase();
+         Cursor cur = db.query(TABLE_QS,null,"category = ?",new String[]{cat}
+                 ,null,null,null);
+         if(cur.moveToFirst()) {
+             do {Question q = new Question();
+                 Integer id = cur.getInt(0);
+                 q.setQid(id);
+                 q.setCat(cur.getString(1));
+                 q.setQText(cur.getString(2));
+                 q.setResponses(cur.getInt(3));
+                 ArrayList<String> opt = new ArrayList<String>();
+                 ArrayList<Integer> result = new ArrayList<Integer>();
+
+                 SQLiteDatabase db1 = this.getReadableDatabase();
+                 Cursor cursor = db1.query(TABLE_OPT,new String[]{"options","results"},"Qid = ?",new String[]{id.toString()}
+                         ,null,null,null);
+                 if(cursor.moveToFirst()){
+                     do{
+                        opt.add(cursor.getString(0));
+                        result.add(cursor.getInt(1));
+                     }while(cursor.moveToNext());
+                 }
+                 q.setOpts(opt);
+                 q.setResults(result);
+                 questions.add(q);
+             }while (cur.moveToNext());
+         }
+         return questions;
      }
 
      public void updateResponse(int Uid, int Qid, String Opt){
