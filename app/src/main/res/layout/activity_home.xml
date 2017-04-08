@@ -128,65 +128,68 @@
         android:layout_width="250dp"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_gravity="start"
+
         android:divider="@android:color/transparent"
         android:dividerHeight="0dp"
-        android:background="#111">
+        android:background="@color/background">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2">
+            android:layout_height="200dp"
+            android:layout_marginBottom="20dp">
             <ImageView
+                android:scaleType="centerCrop"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ft"
-                android:layout_alignParentTop="true"
-                android:layout_alignStart="@+id/avatar" />
+                android:src="@drawable/back_profile"
+                android:layout_alignParentTop="true"/>
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="10dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="20dp"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
                 android:background="@drawable/avatar_generic"
-                android:id="@+id/avatar"/>
+                android:id="@+id/avatar"
+                android:scaleType="centerCrop"/>
 
         </RelativeLayout>
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/menu_profile"
+            android:icon="@drawable/home_black"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="#D8D8D8"
-            android:padding="@dimen/activity_horizontal_margin"
-            android:text="Profile" />
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:padding="20dp"
+            android:text="Profile"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/menu_stats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:padding="20dp"
+            android:textSize="18dp"
+            android:text="Statistics"/>
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:padding="@dimen/activity_horizontal_margin"
-            android:text="Statistics"
-            android:background="#D8D8D8"/>
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:padding="20dp"
+            android:textSize="18dp"
+            android:text="Create Survey" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:padding="@dimen/activity_horizontal_margin"
-            android:text="Create"
-            android:background="#D8D8D8"/>
 
         <TextView
             android:id="@+id/Logout"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="#D8D8D8"
-            android:padding="@dimen/activity_horizontal_margin"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:padding="20dp"
+            android:textSize="18dp"
             android:text="Logout"/>
 
     </LinearLayout>

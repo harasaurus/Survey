@@ -66,3 +66,8 @@ V0.1
 
     Commit: H5
         -implemented database with category activities and logout button in the drawer
+
+    Commit S6:
+        -Added profileActivity
+        -Added Stats activity with pieChart
+        -Changed UI in NavigationDrawer and Profile
