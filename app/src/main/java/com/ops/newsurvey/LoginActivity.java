@@ -22,7 +22,8 @@ import static com.ops.newsurvey.R.id.loginusername;
 public class LoginActivity extends AppCompatActivity {
     User mUser;
     PrefManager mPrefManager;
-
+    EditText mUserView;
+    EditText mPasswordView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,53 +31,55 @@ public class LoginActivity extends AppCompatActivity {
         //initializing User object
         mUser = new User(this);
 
-        EditText user =(EditText) findViewById(R.id.loginusername);
-        EditText password =(EditText) findViewById(R.id.loginpassword);
+        mUserView =(EditText) findViewById(R.id.loginusername);
+        mPasswordView =(EditText) findViewById(R.id.loginpassword);
+        final Button login_button = (Button) findViewById(loginButton);
 
+        //For Session Management
         mPrefManager =new PrefManager(this);
         String usr = mPrefManager.getUser();
         String psw = mPrefManager.getPassword();
 
         if(!(usr.equals("0")||psw.equals("0"))){
-            user.setText(usr);
-            password.setText(psw);
-            login(findViewById(R.id.loginButton));
+            mUserView.setText(usr);
+            mPasswordView.setText(psw);
+            login(login_button);
         }
 
         //TO remove errors from the views
-       user.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+       mUserView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 int id = v.getId();
                 removeWarning(id);
-                return true;
+                if(actionId ==0||actionId==EditorInfo.IME_ACTION_NEXT)
+                {
+                    mPasswordView.requestFocus();
+                }
+                return false;
             }
         });
 
-        password.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if(actionId == 0 || actionId== EditorInfo.IME_ACTION_DONE)
+                int id = v.getId();
+                removeWarning(id);
+                if(actionId ==0||actionId==EditorInfo.IME_ACTION_DONE)
                 {
-                    next_edit.requestFocus();
+                    login(login_button);
                 }
                 return false;
 
-                int id = v.getId();
-                removeWarning(id);
-                return true;
             }
         });
-        EditText first_edit = (EditText) findViewById(loginusername);
-        final EditText next_edit = (EditText) findViewById(loginpassword);
-        final Button login_button = (Button) findViewById(loginButton);
-        first_edit.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+
 
         //setting intent to go to signup if user don't have an account
         TextView noAccount = (TextView) findViewById(R.id.no_account);
         noAccount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                @Override
+                public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this,SignupActivity.class);
                 LoginActivity.this.startActivity(intent);
             }
@@ -110,13 +113,11 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    private void startSession(int id,String user,String pass){ // id variable here not used..
-        ////TODO- make an object of user
+    private void startSession(String user,String pass){
+        mUser.initialize();
         mPrefManager.startSession(user, pass);
         Intent intent = new Intent(this,HomeActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
-        finish();
     }
 
     private void showWarning(int id, int warning){
