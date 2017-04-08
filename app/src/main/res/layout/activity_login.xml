@@ -9,9 +9,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.ops.newsurvey.LoginActivity"
-    android:orientation="vertical"
     android:padding="20dp"
-    android:gravity="center">
+    android:gravity="center"
+    android:orientation="vertical">
 
     <ImageView
         android:contentDescription="@string/app_name"
@@ -22,24 +22,24 @@
         android:layout_marginBottom="55dp"/>
 
     <EditText
+        android:id="@+id/loginusername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="text"
         android:ems="10"
-        android:id="@+id/loginusername"
-        android:hint="Type your username"
-        android:textAlignment="center"
         android:fontFamily="sans-serif"
-        android:textColor="@color/colorPrimaryDark"/>
+        android:hint="Type your username"
+        android:inputType="text"
+        android:imeOptions="actionNext"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-
-
         android:inputType="textPassword"
         android:ems="10"
+        android:imeOptions="actionDone"
         android:fontFamily="sans-serif"
         android:textAlignment="center"
         android:id="@+id/loginpassword"
@@ -62,7 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:id="@+id/textView"
+        android:id="@+id/forget"
         android:textColor="@color/colorPrimaryDark"/>
 
     <TextView
@@ -74,4 +74,4 @@
         android:layout_marginTop="20dp"/>
 
 
-</LinearLayout>
+   </LinearLayout>

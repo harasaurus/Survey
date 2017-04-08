@@ -53,6 +53,9 @@ V0.1
         -Changed themes
         -added custom toolbars in home and category activities
         -improved navigation drawer in home activity
+    Commit: R1
+        -forget password
+
 
     Commit: S5
         -Changed Icons
@@ -71,3 +74,6 @@ V0.1
         -Added profileActivity
         -Added Stats activity with pieChart
         -Changed UI in NavigationDrawer and Profile
+
+     Commit : R2
+             -moving to next text from prev. text from keyboard in sign in..
