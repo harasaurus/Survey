@@ -1,5 +1,6 @@
 package com.ops.newsurvey;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,21 +8,24 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class SignupActivity extends AppCompatActivity {
+    User mUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+
         EditText name = (EditText) findViewById(R.id.name);
         EditText user = (EditText) findViewById(R.id.username);
-        EditText dob = (EditText) findViewById(R.id.gender);
         EditText email = (EditText) findViewById(R.id.email);
         EditText pass = (EditText) findViewById(R.id.password);
         EditText repass = (EditText) findViewById(R.id.repassword);
 
+        //to remove warnings
         name.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -31,14 +35,6 @@ public class SignupActivity extends AppCompatActivity {
         });
 
         user.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                removeWarning(v.getId());
-                return true;
-            }
-        });
-
-        dob.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 removeWarning(v.getId());
@@ -80,24 +76,39 @@ public class SignupActivity extends AppCompatActivity {
         //removeWarnings();
         CheckBox terms = (CheckBox) findViewById(R.id.terms);
         if(terms.isChecked()) {
+            RadioGroup genderRadioButton = (RadioGroup) findViewById(R.id.gender);
+            int checkedId = genderRadioButton.getCheckedRadioButtonId();
+            String gender;
+            switch(checkedId){
+                case R.id.genderM:
+                    gender="M";
+                    break;
+                case R.id.genderF:
+                    gender="F";
+                    break;
+                default:
+                    gender="O";
+            }
+
             String name = getItem(R.id.name);
             String email = getItem(R.id.email);
-            String gender = getItem(R.id.gender);
             String username = getItem(R.id.username);
             String pass1 = getItem(R.id.password);
             String pass2 = getItem(R.id.repassword);
-
-            if(authenticated(name, email, gender, username, pass1, pass2)){
-                register();
+                mUser = new User(this);
+            if(authenticated(name, email, username, pass1, pass2)){
+                mUser.register(username,name,email,gender,pass1);
+                Intent intent = new Intent(this,HomeActivity.class);
+                startActivity(intent);
             }
 
         }
     }
 
-    private boolean authenticated(String name, String email, String DOB, String username, String pass1, String pass2) {
-        if (!(name.isEmpty() || DOB.isEmpty() || username.isEmpty() || pass1.isEmpty() || pass2.isEmpty())) {
+    private boolean authenticated(String name, String email, String username, String pass1, String pass2) {
+        if (!(name.isEmpty() || username.isEmpty() || pass1.isEmpty() || pass2.isEmpty())) {
             if (nameIsAcceptable(name) && usernameIsUnique(username) && emailIsUnique(email) && emailIsValid(email)
-                    && isAdult(DOB) && passwordMatching(pass1, pass2) && passwordIsAcceptable(pass1)) {
+                    && passwordMatching(pass1, pass2) && passwordIsAcceptable(pass1)) {
                 return true;
             } else {
                 return false;
@@ -108,8 +119,8 @@ public class SignupActivity extends AppCompatActivity {
         }
     }
     private boolean usernameIsUnique(String username){
-        ////TODO check if username is unique
-        if(true)
+
+        if(!(mUser.exist(username)))
         {return true;}
         else
         {showWarning(R.id.username, R.string.usernameNotUnique);
@@ -127,8 +138,7 @@ public class SignupActivity extends AppCompatActivity {
 
 
     private boolean emailIsUnique(String email){
-        ////TODO check if email is unique
-        if(true)
+        if(!(mUser.emailExist(email)))
     {return true;}
     else
     {showWarning(R.id.email, R.string.emailNotUnique);
@@ -173,8 +183,6 @@ public class SignupActivity extends AppCompatActivity {
         }
     }
 
-
-
     private void showWarning(int id,int warning){
         TextView textView = (TextView) findViewById(id);
         String warn = getString(warning);
@@ -183,7 +191,6 @@ public class SignupActivity extends AppCompatActivity {
 
     private void emptyFieldHandler(){
         checkEmpty(R.id.name);
-        checkEmpty(R.id.gender);
         checkEmpty(R.id.username);
         checkEmpty(R.id.email);
         checkEmpty(R.id.password);
@@ -196,13 +203,6 @@ public class SignupActivity extends AppCompatActivity {
         if(field.isEmpty())
         {
             showWarning(id,R.string.fieldIsEmpty);}
-    }
-    private void register(){
-        ////TODO register user in DB
-        Intent intent = new Intent(this,HomeActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-        finish();
     }
 
     private String getItem(int id){

@@ -1,48 +1,35 @@
 package com.ops.newsurvey;
 
+import android.content.Context;
+import android.provider.ContactsContract;
+
 import java.util.ArrayList;
+
+import static android.R.attr.id;
 
 /**
  * Created by harasar on 1/2/17.
  */
 
 public class Question {
-    private String mText;
-    private String []mOpts = new String[3];
-    private Integer[]mOpinions = new Integer[3];
-    private Integer mQid,mAttempts;
-    private String[] mTags =new String[4];
-
-
-    Question(String text, ArrayList<String> Opts)
-    {
-        mText= text;
-        mOpts[0] = Opts.get(0);
-        mOpts[1] = Opts.get(1);
-        mOpts[2] = Opts.get(2);
-        createQuestion();
-    }
-
-    Question(String text, String Opt0, String Opt1, String Opt2)
-    {
-        mText= text;
-        mOpts[0] = Opt0;
-        mOpts[1] = Opt1;
-        mOpts[2] = Opt2;
-        createQuestion();
-    }
-
-    private void createQuestion(){
-        ////TODO call to server to store question in database and return a Integer for QID
-    }
+    private String mText,mCat;
+    private Integer mQid,mresponses;
+    private ArrayList<String> mOpts = new ArrayList<String>();
+    private ArrayList<Integer> mResults = new ArrayList<Integer>();
 
     public String getText(){
         return mText;
     }
-
-    public String[] getOpts(){
+    public ArrayList<String> getOpts(){
         return mOpts;
     }
+
+    public void setQid(int id){mQid=id;}
+    public void setQText(String text){mText=text;}
+    public void setCat(String cat){mCat=cat;}
+    public void setResponses(int res){mresponses=res;}
+    public void setOpts(ArrayList<String> opts){mOpts=opts;}
+    public void setResults(ArrayList<Integer> results){mResults=results;}
 
 
 }

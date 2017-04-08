@@ -20,21 +20,9 @@ public class TravelActivity extends AppCompatActivity {
         ImageView banner = (ImageView) findViewById(R.id.banner);
         banner.setImageResource(R.drawable.politics_banner);
 
-        final ArrayList<Question> questions = new ArrayList<>();
-        ArrayList<String> opt = new ArrayList<String>();
-        opt.add("Yes");
-        opt.add("No");
-        opt.add("Can't Say");
-        questions.add(new Question("Travel Question 1",opt));
-        questions.add(new Question("Travel Question 2",opt));
-        questions.add(new Question("Travel Question 3",opt));
-        questions.add(new Question("Travel Question 4",opt));
-        questions.add(new Question("Travel Question 5",opt));
-        questions.add(new Question("Travel Question 6",opt));
-        questions.add(new Question("Travel Question 7",opt));
-        questions.add(new Question("Travel Question 8",opt));
-        questions.add(new Question("Travel Question 9",opt));
-        questions.add(new Question("Travel Question 10",opt));
+        DatabaseManager manager = new DatabaseManager(this);
+        final ArrayList<Question> questions = manager.getAllQuestionsByCategory("TRA");
+
 
         QuestionAdapter Adapter=new QuestionAdapter(this,questions);
         ListView listView=(ListView) findViewById(R.id.List);

@@ -1,46 +1,46 @@
 V0.1
     Commit: H1
-    -Initial Commit
+        -Initial Commit
 
     Commit: S1
-    -Labels removed from android manifest
-    -created PoliticsActivity Activity
-    -updated Question class
-    -updated login UI
-    -created layout for listing questions i.e.-list_item_cat.xml
-    -updated colors
-    -removed ActionBars
+        -Labels removed from android manifest
+        -created PoliticsActivity Activity
+        -updated Question class
+        -updated login UI
+        -created layout for listing questions i.e.-list_item_cat.xml
+        -updated colors
+        -removed ActionBars
 
     Commit: H2
-    -Added path to different activities for each categories in HomeActivity
-    -Created category activities
-    -Fixed an error for constructors in Question
-    -Created QuestionAdapter
+        -Added path to different activities for each categories in HomeActivity
+        -Created category activities
+        -Fixed an error for constructors in Question
+        -Created QuestionAdapter
 
     Commit: S2
-    -changed the icons.
-    -perfected layouts
-    -Changed Home Screen
-    -Changed UI
-    -added question_display.xml
-    -added question_stack.xml @ values
+        -changed the icons.
+        -perfected layouts
+        -Changed Home Screen
+        -Changed UI
+        -added question_display.xml
+        -added question_stack.xml @ values
 
     Commit: S3
-    -Changed UI of Categories
-    -Added first time installation pages
-    -Added PrefManager & WelcomeActivity(temporary, they will be modified )
-    -Added activity_welcome.xml, welcome_slide1.xml - welcome_slide4.xml
+        -Changed UI of Categories
+        -Added first time installation pages
+        -Added PrefManager & WelcomeActivity(temporary, they will be modified )
+        -Added activity_welcome.xml, welcome_slide1.xml - welcome_slide4.xml
 
     Commit: SHR1
-    -Fixed bug in signup activity
-    -Removed excess code
-    -fixed bug in login activity
-    -fixed bug in travel activity
-    -improved functionality in login activity & signup activity
+        -Fixed bug in signup activity
+        -Removed excess code
+        -fixed bug in login activity
+        -fixed bug in travel activity
+        -improved functionality in login activity & signup activity
 
     Commit: S4
-    -Changed first installation pages
-    -Changed UI of activity_first
+        -Changed first installation pages
+        -Changed UI of activity_first
 
     Commit: SHR2
         -updated HomeActivity Layout
@@ -58,4 +58,11 @@ V0.1
         -Changed Icons
         -Added slider in HomeActivity
         -Changed design in Navigation drawer
-        -Added logout function to at navigation drawer.
+        -Added logout function too in navigation drawer.
+
+    Commit: H4
+        -Implemented Database for user data
+        -added navigation.xml
+
+    Commit: H5
+        -implemented database with category activities and logout button in the drawer
