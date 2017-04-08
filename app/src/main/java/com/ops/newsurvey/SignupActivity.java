@@ -6,8 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
@@ -20,17 +22,22 @@ public class SignupActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
 
         EditText name = (EditText) findViewById(R.id.name);
-        EditText user = (EditText) findViewById(R.id.username);
-        EditText email = (EditText) findViewById(R.id.email);
-        EditText pass = (EditText) findViewById(R.id.password);
-        EditText repass = (EditText) findViewById(R.id.repassword);
+        final EditText user = (EditText) findViewById(R.id.username);
+        final EditText email = (EditText) findViewById(R.id.email);
+        final EditText pass = (EditText) findViewById(R.id.password);
+        final EditText repass = (EditText) findViewById(R.id.repassword);
+        final RadioGroup gender = (RadioGroup) findViewById(R.id.gender);
 
         //to remove warnings
         name.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 removeWarning(v.getId());
-                return true;
+                if(actionId ==0||actionId== EditorInfo.IME_ACTION_NEXT)
+                {
+                    user.requestFocus();
+                }
+                return false;
             }
         });
 
@@ -38,7 +45,11 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 removeWarning(v.getId());
-                return true;
+                if(actionId ==0||actionId==EditorInfo.IME_ACTION_NEXT)
+                {
+                    email.requestFocus();
+                }
+                return false;
             }
         });
 
@@ -46,7 +57,11 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 removeWarning(v.getId());
-                return true;
+                if(actionId ==0||actionId==EditorInfo.IME_ACTION_NEXT)
+                {
+                    pass.requestFocus();
+                }
+                return false;
             }
         });
 
@@ -54,7 +69,11 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 removeWarning(v.getId());
-                return true;
+                if(actionId ==0||actionId==EditorInfo.IME_ACTION_NEXT)
+                {
+                    repass.requestFocus();
+                }
+                return false;
             }
         });
 
@@ -62,7 +81,12 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 removeWarning(v.getId());
-                return true;
+                if(actionId ==0||actionId==EditorInfo.IME_ACTION_NEXT)
+                {
+                    gender.requestFocus();
+                }
+                return false;
+
             }
         });
     }
