@@ -17,6 +17,9 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import static com.ops.newsurvey.R.id.menu_profile;
+import static com.ops.newsurvey.R.id.menu_stats;
+
 public class HomeActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private MyViewPagerAdapter myViewPagerAdapter;
@@ -45,6 +48,24 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        //profile link for navigation drawer
+        TextView profile = (TextView) findViewById(menu_profile);
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this,ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+        //stats link navigation drawer
+        TextView stats = (TextView) findViewById(menu_stats);
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this,ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
 
         ImageButton political =(ImageButton) findViewById(R.id.polIcon);
         ImageButton athletic =(ImageButton) findViewById(R.id.spoIcon);
@@ -124,6 +145,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         };
         mDrawerLayout.addDrawerListener(mDrawerToggle);
+
         //home page slider
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         images = new int[]{R.layout.slide1,R.layout.slide2,R.layout.slide3};
