@@ -15,50 +15,65 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FirstActivity" />
+        <activity
+            android:name=".FirstActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".HomeActivity"
             android:label="Home"
+            android:screenOrientation="portrait"
             android:theme="@style/AppInside" />
         <activity
             android:name=".LoginActivity"
             android:label="Login"
-            android:parentActivityName=".FirstActivity" />
+            android:parentActivityName=".FirstActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SignupActivity"
             android:label="Sign-Up"
-            android:parentActivityName=".FirstActivity" />
+            android:parentActivityName=".FirstActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".PoliticsActivity"
             android:label="Politics"
             android:parentActivityName=".HomeActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppInside" />
         <activity
             android:name=".SportsActivity"
             android:label="Sports"
             android:parentActivityName=".HomeActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppInside" />
         <activity
             android:name=".TravelActivity"
             android:label="Travel"
             android:parentActivityName=".HomeActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppInside" />
         <activity
             android:name=".LifestyleActivity"
             android:label="Life Style"
             android:parentActivityName=".HomeActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppInside" />
         <activity
             android:name=".MiscActivity"
             android:label="Miscellaneous"
             android:parentActivityName=".HomeActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppInside" />
         <activity
             android:name=".PopActivity"
             android:label="Pop Culture"
             android:parentActivityName=".HomeActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppInside" />
-        <activity android:name=".ForgetpasswordActivity"></activity>
+        <activity
+            android:name=".ProfileActivity"
+            android:label="Profile"
+            android:parentActivityName=".HomeActivity" />
+        <activity android:name=".StatisticsActivity"></activity>
     </application>
 
 </manifest>

@@ -22,21 +22,9 @@ public class PopActivity extends AppCompatActivity {
         ImageView banner = (ImageView) findViewById(R.id.banner);
         banner.setImageResource(R.drawable.politics_banner);
 
-        final ArrayList<Question> questions = new ArrayList<>();
-        ArrayList<String> opt = new ArrayList<String>();
-        opt.add("Yes");
-        opt.add("No");
-        opt.add("Can't Say");
-        questions.add(new Question("Pop Question 1",opt));
-        questions.add(new Question("Pop Question 2",opt));
-        questions.add(new Question("Pop Question 3",opt));
-        questions.add(new Question("Pop Question 4",opt));
-        questions.add(new Question("Pop Question 5",opt));
-        questions.add(new Question("Pop Question 6",opt));
-        questions.add(new Question("Pop Question 7",opt));
-        questions.add(new Question("Pop Question 8",opt));
-        questions.add(new Question("Pop Question 9",opt));
-        questions.add(new Question("Pop Question 10",opt));
+        DatabaseManager manager = new DatabaseManager(this);
+        final ArrayList<Question> questions = manager.getAllQuestionsByCategory("POP");
+
 
         QuestionAdapter Adapter=new QuestionAdapter(this,questions);
         ListView listView=(ListView) findViewById(R.id.List);

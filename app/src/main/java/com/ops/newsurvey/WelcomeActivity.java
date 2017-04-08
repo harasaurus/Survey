@@ -1,8 +1,6 @@
 package com.ops.newsurvey;
 
-import android.app.Activity;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Context;
@@ -21,8 +19,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.io.File;
-import java.io.FileOutputStream;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class WelcomeActivity extends AppCompatActivity {
 
@@ -33,6 +31,8 @@ public class WelcomeActivity extends AppCompatActivity {
     private int[] mLayouts;
     private Button mBtnSkip, mBtnNext;
     private PrefManager mPrefManager;
+    private SQLiteDatabase mDb;
+    private DatabaseManager mManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +53,17 @@ public class WelcomeActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_welcome);
 
+        //Database Initialization
+        mManager = new DatabaseManager(this);
+        //adding User
+        mManager.addUser(0,"HP","Harshit Pandey","admin1@pi.com","M","phi",R.drawable.ft);
+        mManager.addUser(1,"SS","Sagnik Saha","admin2@pi.com","M","sigma",R.drawable.ft);
+        mManager.addUser(2,"RR","Rishabh Rai","admin3@pi.com","M","ro",R.drawable.ft);
+
+        //adding Questions
+        addQuestions();
+
+        // initialization of variables for slide show
         mViewPager = (ViewPager) findViewById(R.id.view_pager);
         mDotsLayout = (LinearLayout) findViewById(R.id.layoutDots);
         mBtnSkip = (Button) findViewById(R.id.btn_skip);
@@ -124,6 +135,7 @@ public class WelcomeActivity extends AppCompatActivity {
         return mViewPager.getCurrentItem() + i;
     }
 
+    //GOTO Activity first
     private void launchHomeScreen() {
         mPrefManager.setFirstTimeLaunch(false);
         startActivity(new Intent(WelcomeActivity.this, FirstActivity.class));
@@ -208,5 +220,94 @@ public class WelcomeActivity extends AppCompatActivity {
         }
     }
 
+    private void addQuestions(){
+        ArrayList<String> opts= new ArrayList<String>();
+        opts.add("Yes");
+        opts.add("No");
+        opts.add("Can't Say");
+        ArrayList<Integer> results = new ArrayList<Integer>();
+        results.add(0);
+        results.add(0);
+        results.add(0);
+        int responses =0;
 
-}
+        //political
+        String cat = "POL";
+        mManager.addQuestion(0,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(1,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(2,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(3,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(4,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(5,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(6,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(7,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(8,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(9,cat,"Question 1",opts,results,responses);
+
+        //sports
+        cat="SPO";
+        mManager.addQuestion(10,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(11,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(12,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(13,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(14,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(15,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(16,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(17,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(18,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(19,cat,"Question 1",opts,results,responses);
+
+        //Travel
+        cat="TRA";
+        mManager.addQuestion(20,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(21,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(22,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(23,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(24,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(25,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(26,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(27,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(28,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(29,cat,"Question 1",opts,results,responses);
+
+        //Lifestyle
+        cat="LIF";
+        mManager.addQuestion(30,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(31,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(32,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(33,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(34,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(35,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(36,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(37,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(38,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(39,cat,"Question 1",opts,results,responses);
+
+        //pop
+        cat="POP";
+        mManager.addQuestion(40,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(41,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(42,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(43,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(44,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(45,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(46,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(47,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(48,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(49,cat,"Question 1",opts,results,responses);
+
+        //misc
+        cat="MIS";
+        mManager.addQuestion(50,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(51,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(52,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(53,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(54,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(55,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(56,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(57,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(58,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(59,cat,"Question 1",opts,results,responses);
+
+    }
+    }
