@@ -17,9 +17,6 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import static com.ops.newsurvey.R.id.menu_profile;
-import static com.ops.newsurvey.R.id.menu_stats;
-
 public class HomeActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private MyViewPagerAdapter myViewPagerAdapter;
@@ -49,7 +46,7 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         //profile link for navigation drawer
-        TextView profile = (TextView) findViewById(menu_profile);
+        TextView profile = (TextView) findViewById(R.id.profile_drawer);
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,9 +54,10 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         //stats link navigation drawer
-        TextView stats = (TextView) findViewById(menu_stats);
-        profile.setOnClickListener(new View.OnClickListener() {
+        TextView stats = (TextView) findViewById(R.id.stat_drawer);
+        stats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this,ProfileActivity.class);
@@ -130,7 +128,6 @@ public class HomeActivity extends AppCompatActivity {
 
 
         //Navigation Bar
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.home_drawer);
         mDrawerToggle = new ActionBarDrawerToggle(this,mDrawerLayout,bar,R.string.drawer_open,R.string.drawer_close){
             /** Called when a drawer has settled in a completely closed state. */
             public void onDrawerClosed(View view) {

@@ -73,7 +73,9 @@
             android:name=".ProfileActivity"
             android:label="Profile"
             android:parentActivityName=".HomeActivity" />
-        <activity android:name=".StatisticsActivity"></activity>
+        <activity android:name=".StatisticsActivity" />
+        <activity android:name=".SurveyActivity" />
+        <activity android:name=".SurveyResultActivity"></activity>
     </application>
 
 </manifest>

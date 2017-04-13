@@ -42,7 +42,6 @@ public class WelcomeActivity extends AppCompatActivity {
         mPrefManager = new PrefManager(this);
         if (!mPrefManager.isFirstTimeLaunch()) {
             launchHomeScreen();
-            finish();
         }
 
         // Making notification bar transparent
@@ -52,17 +51,17 @@ public class WelcomeActivity extends AppCompatActivity {
         }
 
         setContentView(R.layout.activity_welcome);
+        if(mPrefManager.isFirstTimeLaunch()) {
+            //Database Initialization
+            mManager = new DatabaseManager(this);
+            //adding User
+            mManager.addUser(0, "HP", "Harshit Pandey", "admin1@pi.com", "M", "phi", R.drawable.ft);
+            mManager.addUser(1, "SS", "Sagnik Saha", "admin2@pi.com", "M", "sigma", R.drawable.ft);
+            mManager.addUser(2, "RR", "Rishabh Rai", "admin3@pi.com", "M", "ro", R.drawable.ft);
 
-        //Database Initialization
-        mManager = new DatabaseManager(this);
-        //adding User
-        mManager.addUser(0,"HP","Harshit Pandey","admin1@pi.com","M","phi",R.drawable.ft);
-        mManager.addUser(1,"SS","Sagnik Saha","admin2@pi.com","M","sigma",R.drawable.ft);
-        mManager.addUser(2,"RR","Rishabh Rai","admin3@pi.com","M","ro",R.drawable.ft);
-
-        //adding Questions
-        addQuestions();
-
+            //adding Questions
+            addQuestions();
+        }
         // initialization of variables for slide show
         mViewPager = (ViewPager) findViewById(R.id.view_pager);
         mDotsLayout = (LinearLayout) findViewById(R.id.layoutDots);
@@ -139,7 +138,6 @@ public class WelcomeActivity extends AppCompatActivity {
     private void launchHomeScreen() {
         mPrefManager.setFirstTimeLaunch(false);
         startActivity(new Intent(WelcomeActivity.this, FirstActivity.class));
-        finish();
     }
 
     //  viewpager change listener

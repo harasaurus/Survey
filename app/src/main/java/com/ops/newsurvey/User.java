@@ -10,7 +10,7 @@ import static android.os.Build.VERSION_CODES.M;
  */
 
 public class User {
-    private static int UID;
+    public static int UID;
     private String mName, mUserName, mGender;
     private int mPicId,mNubQues;
     private DatabaseManager DBManager;
@@ -74,6 +74,4 @@ public class User {
     public void initialize(){
         mName = DBManager.getName(UID);
     }
-
-    public int getId(){return UID;}
 }
