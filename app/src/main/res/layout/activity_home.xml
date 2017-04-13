@@ -9,48 +9,48 @@
     android:layout_width="match_parent"
     android:orientation="vertical">
 
-<android.support.v7.widget.Toolbar
-    android:id="@+id/home_toolbar"
-    android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize"
-    android:background="?attr/colorPrimary"
-    android:elevation="4dp"
-    android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
-
-<android.support.v4.widget.DrawerLayout
-    android:id="@+id/home_drawer"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <LinearLayout
-        android:id="@+id/homeScreenLayout"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/home_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@color/background">
-        <!--used viewpager instead of imagebutton for slideshow-->
-        <android.support.v4.view.ViewPager
-            android:id="@+id/view_pager"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="4dp"
-            android:layout_marginTop="10dp"
-            android:scaleType="centerCrop"
-            android:background="#fff"/>
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/home_drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/homeScreenLayout"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="4dp"
-            android:layout_marginBottom="10dp">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/background">
+            <!--used viewpager instead of imagebutton for slideshow-->
+            <android.support.v4.view.ViewPager
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="centerCrop"
+                android:background="#fff"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginBottom="10dp">
 
 
                 <ImageButton
@@ -122,77 +122,75 @@
 
             </LinearLayout>
         </LinearLayout>
-<!--navigation drawer-->
-    <LinearLayout
-        android:id="@+id/homeDrawer"
-        android:layout_width="250dp"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
+        <!--navigation drawer-->
+        <LinearLayout
+            android:id="@+id/homeDrawer"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="start"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0dp"
+            android:background="#111">
 
-        android:divider="@android:color/transparent"
-        android:dividerHeight="0dp"
-        android:background="@color/background">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginBottom="20dp">
-            <ImageView
-                android:scaleType="centerCrop"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/back_profile"
-                android:layout_alignParentTop="true"/>
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_margin="20dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"
-                android:background="@drawable/avatar_generic"
-                android:id="@+id/avatar"
-                android:scaleType="centerCrop"/>
+                android:layout_height="0dp"
+                android:layout_weight="2">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ft"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignStart="@+id/avatar" />
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:background="@drawable/avatar_generic"
+                    android:id="@+id/avatar"/>
 
-        </RelativeLayout>
+            </RelativeLayout>
 
-        <TextView
-            android:id="@+id/menu_profile"
-            android:icon="@drawable/home_black"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/background"
-            android:padding="20dp"
-            android:text="Profile"
-            android:textSize="18dp"/>
+            <TextView
+                android:id="@+id/profile_drawer"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#D8D8D8"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:text="Profile" />
 
-        <TextView
-            android:id="@+id/menu_stats"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/background"
-            android:padding="20dp"
-            android:textSize="18dp"
-            android:text="Statistics"/>
+            <TextView
+                android:id="@+id/stat_drawer"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:text="Statistics"
+                android:background="#D8D8D8"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/background"
-            android:padding="20dp"
-            android:textSize="18dp"
-            android:text="Create Survey" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:text="Create"
+                android:background="#D8D8D8"/>
 
+            <TextView
+                android:id="@+id/Logout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#D8D8D8"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:text="Logout"/>
 
-        <TextView
-            android:id="@+id/Logout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/background"
-            android:padding="20dp"
-            android:textSize="18dp"
-            android:text="Logout"/>
-
-    </LinearLayout>
-</android.support.v4.widget.DrawerLayout>
+        </LinearLayout>
+    </android.support.v4.widget.DrawerLayout>
 
 </LinearLayout>
