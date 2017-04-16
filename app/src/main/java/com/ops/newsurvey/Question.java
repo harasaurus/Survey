@@ -23,6 +23,7 @@ public class Question {
     public ArrayList<String> getOpts(){
         return mOpts;
     }
+    public int getId(){return mQid;}
 
     public void setQid(int id){mQid=id;}
     public void setQText(String text){mText=text;}

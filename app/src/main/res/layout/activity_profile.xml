@@ -17,31 +17,13 @@
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
-        android:id="@+id/profile">
-
-        <ImageView
+        <include
+            layout="@layout/nav_header"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/back_profile"
-            android:scaleType="centerCrop"
-            android:background="#fff"
-            android:id="@+id/profile_bg"/>
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:id="@+id/profile" />
 
-        <ImageView
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:src="@drawable/avatar_generic"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="10dp"
-            android:layout_centerHorizontal="true"/>
-
-
-
-    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

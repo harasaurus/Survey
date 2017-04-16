@@ -4,12 +4,10 @@
     android:layout_height="match_parent">
 
 
-    <TextView
-        android:id="@+id/textView"
+    <ImageButton
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:text="TextView2"
-        android:textSize="82dp"
-        android:background="@color/colorPrimaryDark"
-        android:textColor="#fff"/>
+        android:layout_height="220dp"
+        android:src="@drawable/banner_scroll_2"
+        android:scaleType="centerCrop"
+        android:padding="0dp"/>
 </LinearLayout>

@@ -17,13 +17,12 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import static com.ops.newsurvey.R.id.menu_profile;
-import static com.ops.newsurvey.R.id.menu_stats;
-
 public class HomeActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private MyViewPagerAdapter myViewPagerAdapter;
     private int[] images;
+
+    private DatabaseManager DBManager;
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -33,8 +32,8 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-        //logout for navigation drawer
+        //Navigation Drawer listeners
+        //logout navigation drawer
         TextView logout = (TextView) findViewById(R.id.Logout);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,7 +48,7 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         //profile link for navigation drawer
-        TextView profile = (TextView) findViewById(menu_profile);
+        TextView profile = (TextView) findViewById(R.id.profile_drawer);
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,15 +56,41 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         //stats link navigation drawer
-        TextView stats = (TextView) findViewById(menu_stats);
-        profile.setOnClickListener(new View.OnClickListener() {
+        TextView about = (TextView) findViewById(R.id.about);
+        about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this,ProfileActivity.class);
                 startActivity(intent);
             }
         });
+
+        //create nav drawer
+        TextView create = (TextView) findViewById(R.id.create);
+        create.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public  void onClick(View V){
+
+            }
+
+        });
+
+        //anything view
+        View anyhting = findViewById(R.id.anything);
+        anyhting.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+
+            }
+        });
+
+        //setting the profile picture
+        DBManager = new DatabaseManager(this);
+        View navHead = findViewById(R.id.profileNav);
+        ImageButton propic = (ImageButton) navHead.findViewById(R.id.profile_pic);
+        propic.setImageResource(DBManager.getPicId(User.UID));
 
         ImageButton political =(ImageButton) findViewById(R.id.polIcon);
         ImageButton athletic =(ImageButton) findViewById(R.id.spoIcon);
@@ -130,7 +155,6 @@ public class HomeActivity extends AppCompatActivity {
 
 
         //Navigation Bar
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.home_drawer);
         mDrawerToggle = new ActionBarDrawerToggle(this,mDrawerLayout,bar,R.string.drawer_open,R.string.drawer_close){
             /** Called when a drawer has settled in a completely closed state. */
             public void onDrawerClosed(View view) {

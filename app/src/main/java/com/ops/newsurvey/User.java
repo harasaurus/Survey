@@ -2,15 +2,12 @@ package com.ops.newsurvey;
 
 import android.content.Context;
 
-import static android.R.attr.id;
-import static android.os.Build.VERSION_CODES.M;
-
 /**
  * Created by harasar on 30/1/17.
  */
 
 public class User {
-    private static int UID;
+    public static int UID;
     private String mName, mUserName, mGender;
     private int mPicId,mNubQues;
     private DatabaseManager DBManager;
@@ -23,16 +20,16 @@ public class User {
 
 
     public void register(String username, String name, String email, String gender, String password){
-        int picId = getLoginPic(gender);
+        int picId = setLoginPic(gender);
         UID = DBManager.addUser(-1,username,name,email,gender,password,picId);
     }
 
-    private int getLoginPic(String gender){
+    private int setLoginPic(String gender){
         switch (gender)
         {
-            case "M":return R.drawable.ftd;
-            case "F":return R.drawable.ftd;
-            default:return R.drawable.ftd;
+            case "M":return R.drawable.avatar_m;
+            case "F":return R.drawable.avatar_f;
+            default:return R.drawable.avatar_f;
         }
     }
 
@@ -60,7 +57,7 @@ public class User {
         mUserName=null;
         UID=-1;
         mGender=null;
-        mPicId=R.drawable.ftd;
+        mPicId=-1;
         mNubQues=0;
         }
 
@@ -74,6 +71,4 @@ public class User {
     public void initialize(){
         mName = DBManager.getName(UID);
     }
-
-    public int getId(){return UID;}
 }

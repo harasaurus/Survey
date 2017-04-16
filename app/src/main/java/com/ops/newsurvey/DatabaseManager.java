@@ -7,17 +7,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
-import static android.R.attr.id;
-import static android.R.attr.key;
-import static android.R.attr.x;
-import static android.provider.Contacts.SettingsColumns.KEY;
-import static com.ops.newsurvey.R.id.email;
-import static com.ops.newsurvey.R.id.username;
-import static com.ops.newsurvey.SurveyContract.SurveyEntry;
 import static com.ops.newsurvey.SurveyContract.SurveyEntry.KEY_CATEGORY;
 import static com.ops.newsurvey.SurveyContract.SurveyEntry.KEY_EMAIL;
 import static com.ops.newsurvey.SurveyContract.SurveyEntry.KEY_GENDER;
@@ -148,10 +139,10 @@ class DatabaseManager extends SQLiteOpenHelper {
      public int getPicId(Integer id){SQLiteDatabase db = this.getReadableDatabase();
          Cursor cursor = db.query(TABLE_USER, new String[] { "pic_id" }, "Uid =?",
                  new String[] {id.toString() }, null, null, null, null);
-         if(cursor != null)
-             cursor.moveToFirst();
-
-         return cursor.getInt(0);}
+         if(cursor.moveToFirst())
+            return cursor.getInt(0);
+         else
+            return -1;}
 
     public String getGender(Integer id){
         SQLiteDatabase db = this.getReadableDatabase();
@@ -248,13 +239,23 @@ class DatabaseManager extends SQLiteOpenHelper {
          return questions;
      }
 
-     public void updateResponse(int Uid, int Qid, String Opt){
+     public void updateResponse(int Uid, int Qid){
          SQLiteDatabase db = getWritableDatabase();
          ContentValues values = new ContentValues();
          values.put("Uid",Uid);
          values.put("Qid",Qid);
          db.insert("activity_log",null,values);
          db.close();
+     }
+
+     public boolean checkAttempt(int Uid,int Qid){
+         SQLiteDatabase db = getReadableDatabase();
+         String query = "SELECT QID FROM " + TABLE_ACTIVITY + " WHERE " + KEY_UID + " = " + Uid + " AND " + KEY_QID + " = " + Qid;
+         Cursor cursor = db.rawQuery(query,null);
+        if(cursor.moveToFirst())
+            return true;
+         else
+             return false;
      }
 
      public int getQid(String Text){
@@ -267,15 +268,25 @@ class DatabaseManager extends SQLiteOpenHelper {
          return cursor.getInt(0);
      }
 
-     public String getText(Integer id){
+     public String getQuestionText(Integer id){
          SQLiteDatabase db = this.getReadableDatabase();
          Cursor cursor = db.query(TABLE_QS, new String[] { "qText" }, "Qid =?",
                  new String[] {id.toString() }, null, null, null, null);
-         if(cursor != null)
-             cursor.moveToFirst();
-
-         return cursor.getString(0);
+         if(cursor.moveToFirst())
+             return cursor.getString(0);
+         else
+             return null;
      }
+
+    public int getResultsforOpt(Integer Qid, String opt){
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.query(TABLE_OPT, new String[] { KEY_RESULTS }, "Qid =? AND options =?",
+                new String[] {Qid.toString(),opt }, null, null, null, null);
+        if(cursor.moveToFirst())
+            return cursor.getInt(0);
+        else
+            return -1;
+    }
 
      public int getResponse(Integer id){
          SQLiteDatabase db = this.getReadableDatabase();
@@ -310,14 +321,38 @@ class DatabaseManager extends SQLiteOpenHelper {
          return opts;
      }
 
+     public void updateQuestions(Integer Uid){
+         SQLiteDatabase db = getWritableDatabase();
+         ContentValues values = new ContentValues();
+         values.put(KEY_QUESTIONS,getQuestions(Uid)+1);
+         db.update(TABLE_USER,values,"Uid=?",new String[]{Uid.toString()});
+         db.close();
+     }
+
+     public void updateResponses(Integer Qid){
+         SQLiteDatabase db = getWritableDatabase();
+         ContentValues values = new ContentValues();
+         values.put(KEY_RESPONSES,getResponse(Qid)+1);
+         db.update(TABLE_QS,values,"Qid=?",new String[]{Qid.toString()});
+         db.close();
+     }
+
+     public void updateResults(Integer Qid,String opt){
+         SQLiteDatabase db = getWritableDatabase();
+         ContentValues values = new ContentValues();
+         values.put(KEY_RESULTS,getResultsforOpt(Qid,opt)+1);
+         db.update(TABLE_OPT,values,"Qid=? AND options=?",new String[]{Qid.toString(),opt});
+         db.close();
+     }
+
     public void update(String tableName ,String whereClause, String attribute, String Value){
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(String.valueOf(attribute),String.valueOf(Value));
         db.update(String.valueOf(tableName),values,String.valueOf(whereClause),null);
         db.close();
-
     }
+
      private int setUid(){
          SQLiteDatabase db = this.getReadableDatabase();
          Cursor cursor = db.rawQuery("SELECT Uid FROM user_info",null);

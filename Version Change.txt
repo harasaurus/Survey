@@ -53,9 +53,6 @@ V0.1
         -Changed themes
         -added custom toolbars in home and category activities
         -improved navigation drawer in home activity
-    Commit: R1
-        -forget password
-
 
     Commit: S5
         -Changed Icons
@@ -70,15 +67,23 @@ V0.1
     Commit: H5
         -implemented database with category activities and logout button in the drawer
 
-    Commit S6:
+    Commit: S6
         -Added profileActivity
         -Added Stats activity with pieChart
         -Changed UI in NavigationDrawer and Profile
+        
+    Commit: H6
+        -Complete Database implementation
+        -Rolled back homelayout to H5 because of problem in naviagtion drawer
+        -created Survey and Survey result activity
 
-     Commit: R2
-             -moving to next text from prev. text from keyboard in login in..
-    Commit: R3
-         - moving to next text from prev. text from keyboard in sign up
-         - login button from keyboard after entering user and pass
-    Commit: R4
-         - Question added (politics ,sports,travel)
+    Commit: S7
+        -Visual improvement in navigation drawer,Home Activity, profile activity
+        -added banners in politics,sports and travel activities
+        -fixed bug for submit button
+        -added profile pics
+        
+    Commit: R1
+        -forget password Activity
+        -added Questions
+        -moving from one textview to next in Login Activity and Signup Activtiy
