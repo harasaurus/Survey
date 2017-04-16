@@ -137,6 +137,7 @@ public class WelcomeActivity extends AppCompatActivity {
     private void launchHomeScreen() {
         mPrefManager.setFirstTimeLaunch(false);
         startActivity(new Intent(WelcomeActivity.this, FirstActivity.class));
+        finish();
     }
 
     //  viewpager change listener
@@ -230,11 +231,11 @@ public class WelcomeActivity extends AppCompatActivity {
 
         //political
         String cat = "POL";
-        mManager.addQuestion(0,cat,"Question 1",opts,results,responses);
-        mManager.addQuestion(1,cat,"Question 1",opts,results,responses);
-        mManager.addQuestion(2,cat,"Question 1",opts,results,responses);
-        mManager.addQuestion(3,cat,"Question 1",opts,results,responses);
-        mManager.addQuestion(4,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(0,cat,"Do you care about politics?",opts,results,responses);
+        mManager.addQuestion(1,cat,"Do you think Indian politics is moving in right direction?",opts,results,responses);
+        mManager.addQuestion(2,cat,"Can India and Pakistan be ever friend?",opts,results,responses);
+        mManager.addQuestion(3,cat,"Should general and assembly election be conducted together in India?",opts,results,responses);
+        mManager.addQuestion(4,cat,"Is UN partial towards Us",opts,results,responses);
         mManager.addQuestion(5,cat,"Question 1",opts,results,responses);
         mManager.addQuestion(6,cat,"Question 1",opts,results,responses);
         mManager.addQuestion(7,cat,"Question 1",opts,results,responses);
@@ -243,10 +244,10 @@ public class WelcomeActivity extends AppCompatActivity {
 
         //sports
         cat="SPO";
-        mManager.addQuestion(10,cat,"Question 1",opts,results,responses);
-        mManager.addQuestion(11,cat,"Question 1",opts,results,responses);
-        mManager.addQuestion(12,cat,"Question 1",opts,results,responses);
-        mManager.addQuestion(13,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(10,cat,"Do you like sports?",opts,results,responses);
+        mManager.addQuestion(11,cat,"Should major Dhyanchand be awarded with Bharat Ratna?",opts,results,responses);
+        mManager.addQuestion(12,cat,"Should more movies be made on sports?",opts,results,responses);
+        mManager.addQuestion(13,cat,"Does cricket negatively influence other sports?",opts,results,responses);
         mManager.addQuestion(14,cat,"Question 1",opts,results,responses);
         mManager.addQuestion(15,cat,"Question 1",opts,results,responses);
         mManager.addQuestion(16,cat,"Question 1",opts,results,responses);
@@ -256,10 +257,10 @@ public class WelcomeActivity extends AppCompatActivity {
 
         //Travel
         cat="TRA";
-        mManager.addQuestion(20,cat,"Question 1",opts,results,responses);
-        mManager.addQuestion(21,cat,"Question 1",opts,results,responses);
-        mManager.addQuestion(22,cat,"Question 1",opts,results,responses);
-        mManager.addQuestion(23,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(20,cat,"Do you like to travel",opts,results,responses);
+        mManager.addQuestion(21,cat,"Do you like to go for an unplaned trip?",opts,results,responses);
+        mManager.addQuestion(22,cat,"Do you like to travel with relatives?",opts,results,responses);
+        mManager.addQuestion(23,cat,"Do you like to travel on long journeys alone?",opts,results,responses);
         mManager.addQuestion(24,cat,"Question 1",opts,results,responses);
         mManager.addQuestion(25,cat,"Question 1",opts,results,responses);
         mManager.addQuestion(26,cat,"Question 1",opts,results,responses);
@@ -269,8 +270,8 @@ public class WelcomeActivity extends AppCompatActivity {
 
         //Lifestyle
         cat="LIF";
-        mManager.addQuestion(30,cat,"Question 1",opts,results,responses);
-        mManager.addQuestion(31,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(30,cat,"Do you like your lifestyle?",opts,results,responses);
+        mManager.addQuestion(31,cat,"Are you a foodie?",opts,results,responses);
         mManager.addQuestion(32,cat,"Question 1",opts,results,responses);
         mManager.addQuestion(33,cat,"Question 1",opts,results,responses);
         mManager.addQuestion(34,cat,"Question 1",opts,results,responses);
@@ -282,7 +283,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
         //pop
         cat="POP";
-        mManager.addQuestion(40,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(40,cat,"Do you like movies?",opts,results,responses);
         mManager.addQuestion(41,cat,"Question 1",opts,results,responses);
         mManager.addQuestion(42,cat,"Question 1",opts,results,responses);
         mManager.addQuestion(43,cat,"Question 1",opts,results,responses);

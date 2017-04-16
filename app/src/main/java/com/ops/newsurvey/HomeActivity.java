@@ -235,4 +235,6 @@ public class HomeActivity extends AppCompatActivity {
             container.removeView(view);
         }
     }
+  @Override
+    public void onBackPressed(){}
 }

@@ -99,41 +99,37 @@ class DatabaseManager extends SQLiteOpenHelper {
         SQLiteDatabase db= getReadableDatabase();
         Cursor cursor = db.query(TABLE_USER,new String[]{String.valueOf(KEY_NAME)},String.valueOf(KEY_UID)+"=?"
                 ,new String[]{id.toString()},null,null,null);
-        if(cursor!=null)
-            cursor.moveToFirst();
-        return cursor.getString(0);
-    }
+        if(cursor.moveToFirst())
+            return cursor.getString(0);
+        else
+            return null;}
 
     public String getPassword(Integer id){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(TABLE_USER, new String[] { KEY_PASSWORD }, "Uid =?",
                 new String[] { id.toString() }, null, null, null, null);
-        if(cursor == null)
-            return null;
+        if(cursor.moveToFirst())
+            return cursor.getString(0);
         else
-            cursor.moveToFirst();
-
-    return cursor.getString(0);}
+            return null;}
 
     public String getUsername(Integer id){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(TABLE_USER, new String[] { "username" }, "Uid =?",
                 new String[] {id.toString() }, null, null, null, null);
-        if(cursor != null)
-            cursor.moveToFirst();
-
-        return cursor.getString(0);}
+        if(cursor.moveToFirst())
+            return cursor.getString(0);
+        else
+            return null;}
 
     public String getEmail(Integer id){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(TABLE_USER, new String[] { "email" }, "Uid =?",
                 new String[] {id.toString() }, null, null, null, null);
-        if(cursor != null)
-            cursor.moveToFirst();
+        if(cursor.moveToFirst())
+            return cursor.getString(0);
         else
             return null;
-
-        return cursor.getString(0);
     }
 
      public int getPicId(Integer id){SQLiteDatabase db = this.getReadableDatabase();
@@ -148,19 +144,19 @@ class DatabaseManager extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(TABLE_USER, new String[] { "gender" }, "Uid =?",
                 new String[] {id.toString() }, null, null, null, null);
-        if(cursor != null)
-            cursor.moveToFirst();
-
-        return cursor.getString(0);
+        if(cursor.moveToFirst())
+            return cursor.getString(0);
+        else
+            return null;
     }
 
     public int getQuestions(Integer id){SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(TABLE_USER, new String[] { "questions" }, "Uid =?",
                 new String[] {id.toString() }, null, null, null, null);
-        if(cursor != null)
-            cursor.moveToFirst();
-
-        return cursor.getInt(0);}
+        if(cursor.moveToFirst())
+            return cursor.getInt(0);
+        else
+            return -1;}
 
     public int getUid(String Username){
          SQLiteDatabase db = this.getReadableDatabase();

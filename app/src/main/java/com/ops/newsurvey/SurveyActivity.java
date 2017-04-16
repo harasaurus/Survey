@@ -28,7 +28,8 @@ public class SurveyActivity extends AppCompatActivity {
         //goto results activity
         {Intent ntent = new Intent(this,SurveyResultActivity.class);
             ntent.putExtra("Qid",mQid);
-            startActivity(ntent);}
+            startActivity(ntent);
+            finish();}
 
         // if not attempted show the activity
         setContentView(R.layout.activity_survey);
@@ -61,7 +62,8 @@ public class SurveyActivity extends AppCompatActivity {
                     DBManager.updateResults(mQid,opts.get(index));
                     Intent ntent = new Intent(SurveyActivity.this,SurveyResultActivity.class);
                     ntent.putExtra("Qid",mQid);
-                    startActivity(ntent);}
+                    startActivity(ntent);
+                    finish();}
             }
         });
     }
