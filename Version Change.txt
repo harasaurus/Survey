@@ -75,5 +75,10 @@ V0.1
         -Added Stats activity with pieChart
         -Changed UI in NavigationDrawer and Profile
 
-     Commit : R2
-             -moving to next text from prev. text from keyboard in sign in..
+     Commit: R2
+             -moving to next text from prev. text from keyboard in login in..
+    Commit: R3
+         - moving to next text from prev. text from keyboard in sign up
+         - login button from keyboard after entering user and pass
+    Commit: R4
+         - Question added (politics ,sports,travel)
