@@ -22,6 +22,8 @@ public class HomeActivity extends AppCompatActivity {
     private MyViewPagerAdapter myViewPagerAdapter;
     private int[] images;
 
+    private DatabaseManager DBManager;
+
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
 
@@ -30,8 +32,8 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-        //logout for navigation drawer
+        //Navigation Drawer listeners
+        //logout navigation drawer
         TextView logout = (TextView) findViewById(R.id.Logout);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,14 +58,39 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         //stats link navigation drawer
-        TextView stats = (TextView) findViewById(R.id.stat_drawer);
-        stats.setOnClickListener(new View.OnClickListener() {
+        TextView about = (TextView) findViewById(R.id.about);
+        about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this,ProfileActivity.class);
                 startActivity(intent);
             }
         });
+
+        //create nav drawer
+        TextView create = (TextView) findViewById(R.id.create);
+        create.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public  void onClick(View V){
+
+            }
+
+        });
+
+        //anything view
+        View anyhting = findViewById(R.id.anything);
+        anyhting.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+
+            }
+        });
+
+        //setting the profile picture
+        DBManager = new DatabaseManager(this);
+        View navHead = findViewById(R.id.profileNav);
+        ImageButton propic = (ImageButton) navHead.findViewById(R.id.profile_pic);
+        propic.setImageResource(DBManager.getPicId(User.UID));
 
         ImageButton political =(ImageButton) findViewById(R.id.polIcon);
         ImageButton athletic =(ImageButton) findViewById(R.id.spoIcon);

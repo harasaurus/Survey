@@ -21,7 +21,7 @@ public class MiscActivity extends AppCompatActivity {
         setContentView(R.layout.activity_category);
 
         ImageView banner = (ImageView) findViewById(R.id.banner);
-        banner.setImageResource(R.drawable.politics_banner);
+        banner.setImageResource(R.drawable.banner_politics);
 
         DatabaseManager manager = new DatabaseManager(this);
         final ArrayList<Question> questions = manager.getAllQuestionsByCategory("MIS");

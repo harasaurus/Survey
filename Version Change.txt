@@ -76,3 +76,10 @@ V0.1
         -Complete Database implementation
         -Rolled back homelayout to H5 because of problem in naviagtion drawer
         -created Survey and Survey result activity
+
+    Commit: S7
+        -Visual improvement in navigation drawer,Home Activity, profile activity
+        -added banners in politics,sports and travel activities
+        -fixed bug for submit button
+        -added profile pics
+

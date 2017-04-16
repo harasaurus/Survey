@@ -1,14 +1,14 @@
 package com.ops.newsurvey;
 
-import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +19,6 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class WelcomeActivity extends AppCompatActivity {
@@ -55,9 +54,9 @@ public class WelcomeActivity extends AppCompatActivity {
             //Database Initialization
             mManager = new DatabaseManager(this);
             //adding User
-            mManager.addUser(0, "HP", "Harshit Pandey", "admin1@pi.com", "M", "phi", R.drawable.ft);
-            mManager.addUser(1, "SS", "Sagnik Saha", "admin2@pi.com", "M", "sigma", R.drawable.ft);
-            mManager.addUser(2, "RR", "Rishabh Rai", "admin3@pi.com", "M", "ro", R.drawable.ft);
+            mManager.addUser(0, "HP", "Harshit Pandey", "admin1@pi.com", "M", "phi", R.drawable.avatar_h);
+            mManager.addUser(1, "SS", "Sagnik Saha", "admin2@pi.com", "M", "sigma", R.drawable.avatar_s);
+            mManager.addUser(2, "RR", "Rishabh Rai", "admin3@pi.com", "M", "ro", R.drawable.avatar_r);
 
             //adding Questions
             addQuestions();

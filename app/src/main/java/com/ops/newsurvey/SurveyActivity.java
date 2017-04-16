@@ -53,6 +53,7 @@ public class SurveyActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 int Rid = choiceRadioGroup.getCheckedRadioButtonId();
+                if(Rid!=-1){
                 int index = choices.indexOf((RadioButton)findViewById(Rid));
                 DBManager.updateQuestions(User.UID);
                 DBManager.updateResponses(mQid);
@@ -60,7 +61,7 @@ public class SurveyActivity extends AppCompatActivity {
                 DBManager.updateResults(mQid,opts.get(index));
                 Intent ntent = new Intent(SurveyActivity.this,SurveyResultActivity.class);
                 ntent.putExtra("Qid",mQid);
-                startActivity(ntent);
+                startActivity(ntent);}
             }
         });
     }
