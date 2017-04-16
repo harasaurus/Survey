@@ -3,25 +3,20 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_margin="15dp">
 
     <TextView
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
         android:layout_width="match_parent"
-        android:layout_height="130dp"
+        android:layout_height="wrap_content"
         android:background="#fff"
         android:padding="20dp"
-        android:id="@+id/question" />
+        android:id="@+id/question"/>
 
         <RadioGroup
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
             android:orientation="vertical"
             android:id="@+id/choices"
-            android:background="#fff"
+            android:background="#f7f7f7"
             android:padding="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">

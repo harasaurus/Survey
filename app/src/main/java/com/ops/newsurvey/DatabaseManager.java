@@ -7,18 +7,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
-import static android.R.attr.id;
-import static android.R.attr.key;
-import static android.R.attr.x;
-import static android.media.CamcorderProfile.get;
-import static android.provider.Contacts.SettingsColumns.KEY;
-import static com.ops.newsurvey.R.id.email;
-import static com.ops.newsurvey.R.id.username;
-import static com.ops.newsurvey.SurveyContract.SurveyEntry;
 import static com.ops.newsurvey.SurveyContract.SurveyEntry.KEY_CATEGORY;
 import static com.ops.newsurvey.SurveyContract.SurveyEntry.KEY_EMAIL;
 import static com.ops.newsurvey.SurveyContract.SurveyEntry.KEY_GENDER;
@@ -149,10 +139,10 @@ class DatabaseManager extends SQLiteOpenHelper {
      public int getPicId(Integer id){SQLiteDatabase db = this.getReadableDatabase();
          Cursor cursor = db.query(TABLE_USER, new String[] { "pic_id" }, "Uid =?",
                  new String[] {id.toString() }, null, null, null, null);
-         if(cursor != null)
-             cursor.moveToFirst();
-
-         return cursor.getInt(0);}
+         if(cursor.moveToFirst())
+            return cursor.getInt(0);
+         else
+            return -1;}
 
     public String getGender(Integer id){
         SQLiteDatabase db = this.getReadableDatabase();

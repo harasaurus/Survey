@@ -1,23 +1,22 @@
 package com.ops.newsurvey;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import static android.R.attr.breadCrumbShortTitle;
-import static android.R.attr.id;
-import static android.R.attr.switchMinWidth;
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
+import static com.ops.newsurvey.R.id.loginButton;
 
 public class LoginActivity extends AppCompatActivity {
     User mUser;
     PrefManager mPrefManager;
-
+    EditText mUserView;
+    EditText mPasswordView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,9 +24,9 @@ public class LoginActivity extends AppCompatActivity {
         //initializing User object
         mUser = new User(this);
 
-        //Views from the layout
-        EditText user =(EditText) findViewById(R.id.loginusername);
-        EditText password =(EditText) findViewById(R.id.loginpassword);
+        mUserView =(EditText) findViewById(R.id.loginusername);
+        mPasswordView =(EditText) findViewById(R.id.loginpassword);
+        final Button login_button = (Button) findViewById(loginButton);
 
         //For Session Management
         mPrefManager =new PrefManager(this);
@@ -35,35 +34,45 @@ public class LoginActivity extends AppCompatActivity {
         String psw = mPrefManager.getPassword();
 
         if(!(usr.equals("0")||psw.equals("0"))){
-            user.setText(usr);
-            password.setText(psw);
-            login(findViewById(R.id.loginButton));
+            mUserView.setText(usr);
+            mPasswordView.setText(psw);
+            login(login_button);
         }
 
         //TO remove errors from the views
-       user.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+       mUserView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 int id = v.getId();
                 removeWarning(id);
-                return true;
+                if(actionId ==0||actionId==EditorInfo.IME_ACTION_NEXT)
+                {
+                    mPasswordView.requestFocus();
+                }
+                return false;
             }
         });
 
-        password.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 int id = v.getId();
                 removeWarning(id);
-                return true;
+                if(actionId ==0||actionId==EditorInfo.IME_ACTION_DONE)
+                {
+                    login(login_button);
+                }
+                return false;
+
             }
         });
+
 
         //setting intent to go to signup if user don't have an account
         TextView noAccount = (TextView) findViewById(R.id.no_account);
         noAccount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                @Override
+                public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this,SignupActivity.class);
                 LoginActivity.this.startActivity(intent);
             }
@@ -97,12 +106,10 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-
     private void startSession(String user,String pass){
         mUser.initialize();
         mPrefManager.startSession(user, pass);
         Intent intent = new Intent(this,HomeActivity.class);
-
         startActivity(intent);
     }
 
