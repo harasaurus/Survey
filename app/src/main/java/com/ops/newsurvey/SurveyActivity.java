@@ -25,10 +25,10 @@ public class SurveyActivity extends AppCompatActivity {
         mQid = intent.getIntExtra("Qid",0);
         DBManager = new DatabaseManager(this);
         if(DBManager.checkAttempt(User.UID,mQid))
-            //goto results activity
+        //goto results activity
         {Intent ntent = new Intent(this,SurveyResultActivity.class);
-        ntent.putExtra("Qid",mQid);
-        startActivity(ntent);}
+            ntent.putExtra("Qid",mQid);
+            startActivity(ntent);}
 
         // if not attempted show the activity
         setContentView(R.layout.activity_survey);
@@ -44,7 +44,7 @@ public class SurveyActivity extends AppCompatActivity {
         for(int i=0;i<length;i++){
             RadioButton button = new RadioButton(this);
             button.setText(opts.get(i));
-                choiceRadioGroup.addView(button);
+            choiceRadioGroup.addView(button);
             choices.add(button);
         }
 
@@ -54,14 +54,14 @@ public class SurveyActivity extends AppCompatActivity {
             public void onClick(View v) {
                 int Rid = choiceRadioGroup.getCheckedRadioButtonId();
                 if(Rid!=-1){
-                int index = choices.indexOf((RadioButton)findViewById(Rid));
-                DBManager.updateQuestions(User.UID);
-                DBManager.updateResponses(mQid);
-                DBManager.updateResponse(User.UID,mQid);
-                DBManager.updateResults(mQid,opts.get(index));
-                Intent ntent = new Intent(SurveyActivity.this,SurveyResultActivity.class);
-                ntent.putExtra("Qid",mQid);
-                startActivity(ntent);}
+                    int index = choices.indexOf((RadioButton)findViewById(Rid));
+                    DBManager.updateQuestions(User.UID);
+                    DBManager.updateResponses(mQid);
+                    DBManager.updateResponse(User.UID,mQid);
+                    DBManager.updateResults(mQid,opts.get(index));
+                    Intent ntent = new Intent(SurveyActivity.this,SurveyResultActivity.class);
+                    ntent.putExtra("Qid",mQid);
+                    startActivity(ntent);}
             }
         });
     }

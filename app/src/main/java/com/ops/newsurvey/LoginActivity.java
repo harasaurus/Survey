@@ -1,9 +1,8 @@
 package com.ops.newsurvey;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -11,13 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import static android.R.attr.breadCrumbShortTitle;
-import static android.R.attr.id;
-import static android.R.attr.switchMinWidth;
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 import static com.ops.newsurvey.R.id.loginButton;
-import static com.ops.newsurvey.R.id.loginpassword;
-import static com.ops.newsurvey.R.id.loginusername;
 
 public class LoginActivity extends AppCompatActivity {
     User mUser;

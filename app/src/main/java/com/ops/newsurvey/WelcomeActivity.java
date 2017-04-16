@@ -230,24 +230,24 @@ public class WelcomeActivity extends AppCompatActivity {
 
         //political
         String cat = "POL";
-        mManager.addQuestion(0,cat,"Do you care about indian politics ?",opts,results,responses);
-        mManager.addQuestion(1,cat,"Do you think Indian politics is moving in right direction ?",opts,results,responses);
-        mManager.addQuestion(2,cat,"Can India and Pakistan be ever friend ?",opts,results,responses);
-        mManager.addQuestion(3,cat,"Should general and assembly election be conducted together in India ?",opts,results,responses);
-        mManager.addQuestion(4,cat,"Is UN partial ro US ?",opts,results,responses);
-        mManager.addQuestion(5,cat,"Do you think media is unbiased ?",opts,results,responses);
-        mManager.addQuestion(6,cat,"Is the world politics progressing towards a peaceful and better future ? ",opts,results,responses);
-        mManager.addQuestion(7,cat,"Will a country be better with isolation of student politics and civil polity ?",opts,results,responses);
-        mManager.addQuestion(8,cat,"Is world without border possible in future ?",opts,results,responses);
-        mManager.addQuestion(9,cat,"Should natural resources belong to community ?",opts,results,responses);
+        mManager.addQuestion(0,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(1,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(2,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(3,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(4,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(5,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(6,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(7,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(8,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(9,cat,"Question 1",opts,results,responses);
 
         //sports
         cat="SPO";
-        mManager.addQuestion(10,cat,"Do you care about sports?",opts,results,responses);
-        mManager.addQuestion(11,cat,"Should Major Dhyanchand awarded Bhartratn ?",opts,results,responses);
-        mManager.addQuestion(12,cat,"Should cricket be considered as national game of India ?",opts,results,responses);
-        mManager.addQuestion(13,cat,"Should more movies be made on sports ?",opts,results,responses);
-        mManager.addQuestion(14,cat,"Does cricket negatively influencing other game ?",opts,results,responses);
+        mManager.addQuestion(10,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(11,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(12,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(13,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(14,cat,"Question 1",opts,results,responses);
         mManager.addQuestion(15,cat,"Question 1",opts,results,responses);
         mManager.addQuestion(16,cat,"Question 1",opts,results,responses);
         mManager.addQuestion(17,cat,"Question 1",opts,results,responses);
@@ -256,10 +256,10 @@ public class WelcomeActivity extends AppCompatActivity {
 
         //Travel
         cat="TRA";
-        mManager.addQuestion(20,cat,"Do you like travling ?",opts,results,responses);
-        mManager.addQuestion(21,cat,"Do you like to go for an unplaned trip ?",opts,results,responses);
-        mManager.addQuestion(22,cat,"Do you like to travel with relatives ?",opts,results,responses);
-        mManager.addQuestion(23,cat,"Do you like to travel a long journey alone ?",opts,results,responses);
+        mManager.addQuestion(20,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(21,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(22,cat,"Question 1",opts,results,responses);
+        mManager.addQuestion(23,cat,"Question 1",opts,results,responses);
         mManager.addQuestion(24,cat,"Question 1",opts,results,responses);
         mManager.addQuestion(25,cat,"Question 1",opts,results,responses);
         mManager.addQuestion(26,cat,"Question 1",opts,results,responses);
@@ -307,4 +307,4 @@ public class WelcomeActivity extends AppCompatActivity {
         mManager.addQuestion(59,cat,"Question 1",opts,results,responses);
 
     }
-    }
+}

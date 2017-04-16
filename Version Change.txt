@@ -71,7 +71,7 @@ V0.1
         -Added profileActivity
         -Added Stats activity with pieChart
         -Changed UI in NavigationDrawer and Profile
-        
+
     Commit: H6
         -Complete Database implementation
         -Rolled back homelayout to H5 because of problem in naviagtion drawer
@@ -82,8 +82,12 @@ V0.1
         -added banners in politics,sports and travel activities
         -fixed bug for submit button
         -added profile pics
-        
+
     Commit: R1
         -forget password Activity
         -added Questions
         -moving from one textview to next in Login Activity and Signup Activtiy
+
+    Patch: 1
+        -removed questions to avoid a database error
+
