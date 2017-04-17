@@ -124,6 +124,7 @@ public class SignupActivity extends AppCompatActivity {
                 mUser.register(username,name,email,gender,pass1);
                 Intent intent = new Intent(this,HomeActivity.class);
                 startActivity(intent);
+                finish();
             }
 
         }
@@ -235,38 +236,10 @@ public class SignupActivity extends AppCompatActivity {
         return Item;
     }
 
-   /* private boolean haveSmallAlpha(String password){
-        if(password.matches(".* + [a-z] + .*")){
-            return true;
-        }
-        else{
-            return false;
-        }
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(this,FirstActivity.class);
+        startActivity(intent);
     }
-
-    private boolean haveCaps(String password){
-        if(password.matches(".* + [A-Z] + .*")){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-
-    private boolean haveSpclChar(String password){
-    if(password.matches(".* + [!@#$%^&*] + .*")){
-        return true;
-    }else{
-        return false;
-    }
-    }
-
-    private boolean haveNumber(String password){
-        if(password.matches(".* + [0-9] + .*")){
-            return true;
-        }else{
-            return false;
-        }
-    }*/
 }
 

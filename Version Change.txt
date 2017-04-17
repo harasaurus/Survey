@@ -91,3 +91,6 @@ V0.1
     Patch: 1
         -removed questions to avoid a database error
 
+    Commit: H7
+        -improved profileActivity
+        -improved navigation between activities
