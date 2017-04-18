@@ -43,7 +43,8 @@ public class HomeActivity extends AppCompatActivity {
                 new User(HomeActivity.this).clearUID();
 
                 Intent intent = new Intent(HomeActivity.this,FirstActivity.class);
-               startActivity(intent);
+                startActivity(intent);
+                finish();
             }
         });
 

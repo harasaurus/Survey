@@ -31,7 +31,7 @@
         android:layout_height="160dp"
         android:scaleType="centerCrop"/>
     <ListView
-        android:padding="10dp"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/banner"
         android:id="@+id/List"
         android:layout_width="match_parent"

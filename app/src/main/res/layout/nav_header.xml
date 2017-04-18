@@ -12,8 +12,8 @@
 
     <ImageButton
         android:id="@+id/profile_pic"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="115dp"
+        android:layout_height="115dp"
         android:src="@drawable/avatar_m"
         android:scaleType="centerCrop"
         android:background="@null"

@@ -41,6 +41,7 @@ public class WelcomeActivity extends AppCompatActivity {
         mPrefManager = new PrefManager(this);
         if (!mPrefManager.isFirstTimeLaunch()) {
             launchHomeScreen();
+            finish();
         }
 
         // Making notification bar transparent

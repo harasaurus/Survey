@@ -94,3 +94,7 @@ V0.1
     Commit: H7
         -improved profileActivity
         -improved navigation between activities
+
+    Commit S8:
+        -added Piechart
+        -fixed some small bugs
