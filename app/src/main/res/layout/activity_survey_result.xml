@@ -8,29 +8,31 @@
     tools:context="com.ops.newsurvey.SurveyResultActivity"
     android:layout_margin="15dp"
     android:orientation="vertical">
-    <LinearLayout
-        android:id="@+id/survey_result_display"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#f7f7f7"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/survey_quest_display"
+
+        <LinearLayout
+            android:id="@+id/survey_result_display"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp"
-            android:background="@color/white"/>
-        <com.github.mikephil.charting.charts.PieChart
-            android:id="@+id/chart"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_gravity="center"/>
+            android:background="#f7f7f7"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/survey_quest_display"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="20dp" />
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/chart"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:orientation="vertical"/>
+
+
+        </LinearLayout>
 
 
     </LinearLayout>
-
-
-
-
-
-</LinearLayout>

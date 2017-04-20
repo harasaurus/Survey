@@ -98,3 +98,7 @@ V0.1
     Commit S8:
         -added Piechart
         -fixed some small bugs
+
+    Commit S8.1:
+        -improved Piechart.
+        -added animation in piechart.
