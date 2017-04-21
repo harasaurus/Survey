@@ -95,10 +95,13 @@ V0.1
         -improved profileActivity
         -improved navigation between activities
 
-    Commit S8:
+    Commit: S8
         -added Piechart
         -fixed some small bugs
 
-    Commit S8.1:
+    Commit: S9
         -improved Piechart.
         -added animation in piechart.
+
+    Commit: Z
+        -Upgraded to V0.2

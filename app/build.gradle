@@ -7,7 +7,7 @@ android {
         applicationId "com.ops.newsurvey"
         minSdkVersion 19
         targetSdkVersion 24
-        versionName '0.1'
+        versionName '0.2'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
