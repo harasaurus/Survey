@@ -5,17 +5,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.ops.newsurvey.SurveyResultActivity">
-    <LinearLayout
-        android:id="@+id/survey_result_display"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/survey_quest_display"
+    tools:context="com.ops.newsurvey.SurveyResultActivity"
+    android:layout_margin="15dp"
+    android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/survey_result_display"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:background="#f7f7f7"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/survey_quest_display"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="20dp" />
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/chart"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:orientation="vertical"/>
+
+
+        </LinearLayout>
+
+
     </LinearLayout>
-
-
-</LinearLayout>
